@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>868143096815-02l2om6cagfa9kpj5ii8og9du2sp9idp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.868143096815-02l2om6cagfa9kpj5ii8og9du2sp9idp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAkDtnVpLz8bjOoAm0tPm564Yqczdq6rxk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>868143096815</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.toeic</string>
+	<key>PROJECT_ID</key>
+	<string>unoffical-toeicez</string>
+	<key>STORAGE_BUCKET</key>
+	<string>unoffical-toeicez.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:868143096815:ios:f0d659cbff7f0c1276cc1a</string>
+</dict>
+</plist>
