@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "868143096815-6reiulqujnr51edm603puu0rttjk2hnd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.toeic",
+            "certificate_hash": "5bd89332ec45d728b72c3205126c71457d99feea"
+          }
+        },
+        {
           "client_id": "868143096815-eb4oa43vc5uqs3641g5u1qq1augqo7n6.apps.googleusercontent.com",
           "client_type": 3
         }

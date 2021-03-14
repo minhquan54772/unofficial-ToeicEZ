@@ -13,8 +13,8 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
       super(AuthenticationStateInitial()); //initial state
 
   @override
-  Stream<AuthenticationState> mapEventToState(AuthenticationEvent event) async* {
-    if (AuthenticationEvent is AuthenticationEventStarted) {
+  Stream<AuthenticationState> mapEventToState(AuthenticationEvent authenticationEvent) async* {
+    if (authenticationEvent is AuthenticationEventStarted) {
       final isSignIn = await _userRepository.isSignedIn();
       if (isSignIn) {
         final firebaseUser = await _userRepository.getUser();
@@ -22,9 +22,9 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
       } else {
         yield AuthenticationStateFailure();
       }
-    } else if(AuthenticationEvent is AuthenticationEventLoggedIn) {
+    } else if(authenticationEvent is AuthenticationEventLoggedIn) {
       yield AuthenticationStateSuccess(firebaseUser: await _userRepository.getUser());
-    } else if(AuthenticationEvent is AuthenticationEventLoggedOut) {
+    } else if(authenticationEvent is AuthenticationEventLoggedOut) {
       _userRepository.signOut();
       yield AuthenticationStateFailure();
     }
