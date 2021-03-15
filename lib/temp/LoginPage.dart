@@ -8,6 +8,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
         body:Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
                 width: 232,
@@ -18,6 +19,7 @@ class LoginPage extends StatelessWidget {
                       fit: BoxFit.fitWidth),
                 )
               ),
+              SizedBox(height: 10),
               Text(
                 'Learn TOEIC your own pace',
                 textAlign: TextAlign.center,
@@ -31,6 +33,7 @@ class LoginPage extends StatelessWidget {
                     height: 1
                 ),
               ),
+              SizedBox(height: 100),
               Container(
                 width: 350,
                 height: 60,
@@ -72,7 +75,8 @@ class LoginPage extends StatelessWidget {
                   color: Color.fromRGBO(34, 79, 146, 1),
                 )
               ),
-            Container(
+              SizedBox(height: 10),
+              Container(
                 width: 350,
                 height: 60,
                 child: Row(
@@ -120,7 +124,8 @@ class LoginPage extends StatelessWidget {
                         blurRadius: 4)
                   ],
                   color: Color.fromRGBO(255, 255, 255, 1),
-                )),
+                )
+              ),
             ],
           ),
         )
