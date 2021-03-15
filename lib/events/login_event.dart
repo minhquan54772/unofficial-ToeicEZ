@@ -30,6 +30,7 @@ class LoginEventPasswordChanged extends LoginEvent {
 }
 //press "Sign in with Google"
 class LoginEventWithGooglePressed extends LoginEvent {}
+class LoginEventWithFacebookPressed extends LoginEvent {}
 class LoginEventWithEmailAndPasswordPressed extends LoginEvent {
   final String email;
   final String password;
