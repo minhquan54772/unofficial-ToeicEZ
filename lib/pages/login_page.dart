@@ -5,6 +5,7 @@ import 'package:toeic/blocs/authentication_bloc.dart';
 import 'package:toeic/blocs/login_bloc.dart';
 import 'package:toeic/events/authentication_event.dart';
 import 'package:toeic/events/login_event.dart';
+import 'package:toeic/pages/button/google_login_button.dart';
 import 'package:toeic/pages/button/login_button.dart';
 import 'package:toeic/pages/button/register_user_button.dart';
 import 'package:toeic/repositories/user_repository.dart';
@@ -119,6 +120,8 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: isLoginButtonEnabled(loginState)?
                           _onLoginEmailAndPassword : null, //check is enable?
                         ),
+                        Padding(padding: EdgeInsets.only(top: 10),),
+                        GoogleLoginButton(),
                         Padding(padding: EdgeInsets.only(top: 10),),
                         RegisterUserButton(userRepository: _userRepository,)
                       ],
