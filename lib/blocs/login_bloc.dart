@@ -37,7 +37,14 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         yield LoginState.success();
       } catch (_) {
         yield LoginState.failure();
-    }
+      }
+    } else if (loginEvent is LoginEventWithFacebookPressed) {
+      try {
+        await _userRepository.loginWithFacebook();
+        yield LoginState.success();
+      } catch (_) {
+        yield LoginState.failure();
+      }
     } else if (loginEvent is LoginEventWithEmailAndPasswordPressed) {
       try {
         await _userRepository.signInWithEmailAndPassword(loginEvent.email, loginEvent.password);

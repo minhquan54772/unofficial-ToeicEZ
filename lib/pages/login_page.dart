@@ -5,6 +5,7 @@ import 'package:toeic/blocs/authentication_bloc.dart';
 import 'package:toeic/blocs/login_bloc.dart';
 import 'package:toeic/events/authentication_event.dart';
 import 'package:toeic/events/login_event.dart';
+import 'package:toeic/pages/button/facebook_login_button.dart';
 import 'package:toeic/pages/button/google_login_button.dart';
 import 'package:toeic/pages/button/login_button.dart';
 import 'package:toeic/pages/button/register_user_button.dart';
@@ -80,10 +81,6 @@ class _LoginPageState extends State<LoginPage> {
                         color: Color.fromRGBO(144, 137, 137, 1),
                         fontFamily: 'Roboto',
                         fontSize: 19,
-                        letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
-                        fontWeight: FontWeight.normal,
-                        height: 1
                     ),
                   ),
                   TextFormField(
@@ -121,9 +118,19 @@ class _LoginPageState extends State<LoginPage> {
                           _onLoginEmailAndPassword : null, //check is enable?
                         ),
                         Padding(padding: EdgeInsets.only(top: 10),),
+                        RegisterUserButton(userRepository: _userRepository,),
+                        Padding(padding: EdgeInsets.only(top: 10),),
+                        Text(
+                          '- OR -',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color.fromRGBO(144, 137, 137, 1),
+                          ),
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 10),),
                         GoogleLoginButton(),
                         Padding(padding: EdgeInsets.only(top: 10),),
-                        RegisterUserButton(userRepository: _userRepository,)
+                        FacebookLoginButton(),
                       ],
                     ),
                   ),
