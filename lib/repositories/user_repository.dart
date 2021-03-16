@@ -22,8 +22,8 @@ class UserRepository {
     final GoogleSignInAccount googleSignInAccount = await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
     final AuthCredential authCredential = GoogleAuthProvider.getCredential(
-        idToken: googleSignInAuthentication.accessToken,
-        accessToken: googleSignInAuthentication.idToken
+        idToken: googleSignInAuthentication.idToken,
+        accessToken: googleSignInAuthentication.accessToken
     );
     await _firebaseAuth.signInWithCredential(authCredential);
   }
