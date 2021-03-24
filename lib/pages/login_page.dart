@@ -15,7 +15,7 @@ import 'package:toeic/states/login_state.dart';
 class LoginPage extends StatefulWidget {
   final UserRepository _userRepository;
   //constructor
-  LoginPage({Key, key, @required UserRepository userRepository}):
+  LoginPage({Key key, @required UserRepository userRepository}):
       assert(userRepository != null),
       _userRepository = userRepository,
       super(key: key);
