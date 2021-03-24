@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:toeic/blocs/authentication_bloc.dart';
 import 'package:toeic/events/authentication_event.dart';
+import 'package:toeic/temp/iPhone12ProMax1.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -11,7 +12,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int curridx = 0;
+  int _selectedIndex = 0;
+
+  static List<Widget> _widgetOptions = <Widget>[
+    Text(
+      'Index 0: Lộ trình học',
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'Index 1: Thư viện',
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'Index 2: Bảng tin',
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'Index 3: Tài khoản',
+      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+    ),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -28,54 +55,44 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Center(
-        child: Text('This is HomePage!', style: TextStyle(fontSize: 30, color: Colors.green),),
+        // child: Text('This is HomePage!', style: TextStyle(fontSize: 30, color: Colors.green),),
+        child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container(
-          height: 60,
-          color: Colors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              iconBtnAppbar("assets/images/icons/icon_routine.svg", "Lộ trình học", 0),
-              iconBtnAppbar("assets/images/icons/icon_library.svg", "Thư viện", 1),
-              iconBtnAppbar("assets/images/icons/icon_notification.svg", "Bảng tin", 2),
-              iconBtnAppbar("assets/images/icons/icon_profile.svg", "Tài khoản", 3),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  GestureDetector iconBtnAppbar(String iconpath, String title, int index) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          curridx = index;
-        });
-      },
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          SvgPicture.asset(
-            iconpath,
-            height: 30,
-            color: curridx == index ? Colors.blueAccent : Colors.grey,
-          ),
-          SizedBox(
-            height: 3,
-          ),
-          Text(
-            title,
-            style: TextStyle(
-                fontSize: 14,
-                fontWeight:
-                curridx == index ? FontWeight.w700 : FontWeight.w600,
-                color: curridx == index ? Colors.blueAccent : Colors.grey
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+                "assets/images/icons/icon_routine.svg",
+                color: _selectedIndex == 0 ? Colors.blueAccent : Colors.grey,
             ),
-          )
+            label: 'Lộ trình học',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              "assets/images/icons/icon_library.svg",
+              color: _selectedIndex == 1 ? Colors.blueAccent : Colors.grey,
+            ),
+            label: 'Thư viện',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              "assets/images/icons/icon_notification.svg",
+              color: _selectedIndex == 2 ? Colors.blueAccent : Colors.grey,
+            ),
+            label: 'Bảng tin',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(
+              "assets/images/icons/icon_profile.svg",
+              color: _selectedIndex == 3 ? Colors.blueAccent : Colors.grey,
+            ),
+            label: 'Tài khoản',
+          ),
         ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blueAccent,
+        onTap: _onItemTapped,
       ),
     );
   }
