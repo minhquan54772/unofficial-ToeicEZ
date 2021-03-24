@@ -58,3 +58,7 @@ flutter:
     - assets/images/google.png
     - assets/images/Toeicez.png
     - assets/images/fb_vector.svg
+    - assets/images/icons/icon_routine.svg
+    - assets/images/icons/icon_library.svg
+    - assets/images/icons/icon_notification.svg
+    - assets/images/icons/icon_profile.svg

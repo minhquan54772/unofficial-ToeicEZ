@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //signout for testing firstly
     return MaterialApp(
-      title: 'Login with Firebase',
+      title: 'ToeicEZ Application',
       home: BlocProvider(
         create: (context) => AuthenticationBloc(userRepository: _userRepository)..add(AuthenticationEventStarted()),
         child: BlocBuilder<AuthenticationBloc, AuthenticationState>(
