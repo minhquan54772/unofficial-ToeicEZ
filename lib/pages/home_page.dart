@@ -5,7 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:toeic/blocs/authentication_bloc.dart';
 import 'package:toeic/events/authentication_event.dart';
 import 'package:toeic/pages/library_page.dart';
-
+import 'package:toeic/pages/progress_page.dart';
 import 'package:toeic/temp/iPhone12ProMax1.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,10 +17,7 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   static List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Lộ trình học',
-      style: TextStyle(fontSize: 30),
-    ),
+    ProgressPage(),
     LibraryPage(),
     Text(
       'Index 2: Bảng tin',
@@ -35,19 +32,19 @@ class _HomePageState extends State<HomePage> {
   static List<Widget> _titleOptions = <Widget>[
     Text(
       'LỘ TRÌNH HỌC',
-      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.normal),
     ),
     Text(
       'THƯ VIỆN',
-      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.normal),
     ),
     Text(
       'BẢNG TIN',
-      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.normal),
     ),
     Text(
       'TÀI KHOẢN',
-      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.normal),
     ),
   ];
 
@@ -64,12 +61,19 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: _titleOptions[_selectedIndex],
         centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.replay),
+          onPressed: () {
+            print("Refresh");
+          },
+        ),
         actions: <Widget>[
           IconButton(
-              icon: Icon(Icons.exit_to_app),
-              onPressed: (){
-                BlocProvider.of<AuthenticationBloc>(context).add(AuthenticationEventLoggedOut());
-              },
+            icon: Icon(Icons.exit_to_app),
+            onPressed: () {
+              BlocProvider.of<AuthenticationBloc>(context)
+                  .add(AuthenticationEventLoggedOut());
+            },
           )
         ],
       ),
@@ -82,8 +86,8 @@ class _HomePageState extends State<HomePage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: SvgPicture.asset(
-                "assets/images/icons/icon_routine.svg",
-                color: _selectedIndex == 0 ? Colors.blueAccent : Colors.grey,
+              "assets/images/icons/icon_routine.svg",
+              color: _selectedIndex == 0 ? Colors.blueAccent : Colors.grey,
             ),
             label: 'Lộ trình học',
           ),
@@ -116,4 +120,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-

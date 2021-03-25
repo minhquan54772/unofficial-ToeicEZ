@@ -20,7 +20,7 @@ class _LibraryState extends State<LibraryPage> {
             ButtonTheme(
               height: 50,
               child: RaisedButton.icon(
-                onPressed: (){},
+                onPressed: () {},
                 color: Colors.white70,
                 icon: Icon(Icons.library_books),
                 label: Text(
@@ -28,15 +28,14 @@ class _LibraryState extends State<LibraryPage> {
                   style: TextStyle(fontSize: 16),
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
               child: RaisedButton.icon(
-                onPressed: (){},
+                onPressed: () {},
                 color: Colors.white70,
                 icon: Icon(Icons.wysiwyg),
                 label: Text(
@@ -44,15 +43,14 @@ class _LibraryState extends State<LibraryPage> {
                   style: TextStyle(fontSize: 16),
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
               child: RaisedButton.icon(
-                onPressed: (){},
+                onPressed: () {},
                 color: Colors.white70,
                 icon: Icon(Icons.list),
                 label: Text(
@@ -60,15 +58,14 @@ class _LibraryState extends State<LibraryPage> {
                   style: TextStyle(fontSize: 16),
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
               child: RaisedButton.icon(
-                onPressed: (){},
+                onPressed: () {},
                 color: Colors.white70,
                 icon: Icon(Icons.menu_book_outlined),
                 label: Text(
@@ -76,15 +73,14 @@ class _LibraryState extends State<LibraryPage> {
                   style: TextStyle(fontSize: 16),
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
               child: RaisedButton.icon(
-                onPressed: (){},
+                onPressed: () {},
                 color: Colors.white70,
                 icon: Icon(Icons.sort_by_alpha),
                 label: Text(
@@ -92,15 +88,14 @@ class _LibraryState extends State<LibraryPage> {
                   style: TextStyle(fontSize: 16),
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
               child: RaisedButton.icon(
-                onPressed: (){},
+                onPressed: () {},
                 color: Colors.white70,
                 icon: Icon(Icons.bubble_chart),
                 label: Text(
@@ -108,15 +103,14 @@ class _LibraryState extends State<LibraryPage> {
                   style: TextStyle(fontSize: 16),
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
               child: RaisedButton.icon(
-                onPressed: (){},
+                onPressed: () {},
                 color: Colors.white70,
                 icon: Icon(Icons.history),
                 label: Text(
@@ -124,8 +118,7 @@ class _LibraryState extends State<LibraryPage> {
                   style: TextStyle(fontSize: 16),
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
           ],
