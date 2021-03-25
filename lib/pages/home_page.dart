@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:toeic/blocs/authentication_bloc.dart';
 import 'package:toeic/events/authentication_event.dart';
+import 'package:toeic/pages/library_page.dart';
+
 import 'package:toeic/temp/iPhone12ProMax1.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,19 +19,35 @@ class _HomePageState extends State<HomePage> {
   static List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Lộ trình học',
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 30),
     ),
-    Text(
-      'Index 1: Thư viện',
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-    ),
+    LibraryPage(),
     Text(
       'Index 2: Bảng tin',
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 30),
     ),
     Text(
       'Index 3: Tài khoản',
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+      style: TextStyle(fontSize: 30),
+    ),
+  ];
+
+  static List<Widget> _titleOptions = <Widget>[
+    Text(
+      'LỘ TRÌNH HỌC',
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'THƯ VIỆN',
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'BẢNG TIN',
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'TÀI KHOẢN',
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
     ),
   ];
 
@@ -44,7 +62,8 @@ class _HomePageState extends State<HomePage> {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: _titleOptions[_selectedIndex],
+        centerTitle: true,
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.exit_to_app),
