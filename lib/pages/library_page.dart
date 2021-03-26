@@ -34,8 +34,7 @@ class _LibraryState extends State<LibraryPage> {
                   ],
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
@@ -56,8 +55,7 @@ class _LibraryState extends State<LibraryPage> {
                   ],
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
@@ -78,8 +76,7 @@ class _LibraryState extends State<LibraryPage> {
                   ],
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
@@ -100,8 +97,7 @@ class _LibraryState extends State<LibraryPage> {
                   ],
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
@@ -122,8 +118,7 @@ class _LibraryState extends State<LibraryPage> {
                   ],
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
@@ -144,8 +139,7 @@ class _LibraryState extends State<LibraryPage> {
                   ],
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
             SizedBox(height: 10),
@@ -166,8 +160,7 @@ class _LibraryState extends State<LibraryPage> {
                   ],
                 ),
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
             ),
           ],
