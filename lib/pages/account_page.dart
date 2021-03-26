@@ -1,22 +1,78 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:toeic/blocs/authentication_bloc.dart';
+import 'package:toeic/events/authentication_event.dart';
 
-class LibraryPage extends StatefulWidget {
+class AccountPage extends StatefulWidget {
   @override
-  _LibraryState createState() => _LibraryState();
+  _AccountState createState() => _AccountState();
 }
 
-class _LibraryState extends State<LibraryPage> {
+class _AccountState extends State<AccountPage> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(15.0),
+        padding: EdgeInsets.all(10.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: SvgPicture.asset(
+                    "assets/images/icons/icon_user.svg",
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Someone Example',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25.0,
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 3.0)),
+                      Text('GG: someone.example@gmail.com'),
+                      Padding(padding: EdgeInsets.only(top: 3.0)),
+                      Text(
+                        'PREMIUM USER',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                          color: Colors.blueAccent,
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.only(top: 5.0)),
+                      Text(
+                        'Coin: 0',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.0,
+                          color: Colors.blueAccent,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                IconButton(
+                  icon: Icon(Icons.exit_to_app),
+                  padding: EdgeInsets.only(left: 30.0),
+                  color: Colors.redAccent,
+                  onPressed: (){
+                    BlocProvider.of<AuthenticationBloc>(context).add(AuthenticationEventLoggedOut());
+                  },
+                ),
+              ],
+            ),
             ButtonTheme(
               height: 50,
               child: RaisedButton(
@@ -25,10 +81,10 @@ class _LibraryState extends State<LibraryPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Icon(Icons.library_books),
+                    Icon(Icons.verified),
                     SizedBox(width: 10),
                     Text(
-                      'Bài kiểm tra TOEIC đầy đủ',
+                      'Kích hoạt tài khoản',
                       style: TextStyle(fontSize: 16),
                     ),
                   ],
@@ -38,7 +94,7 @@ class _LibraryState extends State<LibraryPage> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            Padding(padding: EdgeInsets.only(top: 10.0)),
             ButtonTheme(
               height: 50,
               child: RaisedButton(
@@ -47,10 +103,10 @@ class _LibraryState extends State<LibraryPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Icon(Icons.mode_edit),
+                    Icon(FontAwesomeIcons.facebook),
                     SizedBox(width: 10),
                     Text(
-                      'Bài kiểm tra rút gọn',
+                      'Fanpage ToeicEZ',
                       style: TextStyle(fontSize: 16),
                     ),
                   ],
@@ -60,7 +116,7 @@ class _LibraryState extends State<LibraryPage> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            Padding(padding: EdgeInsets.only(top: 10.0)),
             ButtonTheme(
               height: 50,
               child: RaisedButton(
@@ -69,10 +125,10 @@ class _LibraryState extends State<LibraryPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Icon(Icons.list),
+                    Icon(Icons.star),
                     SizedBox(width: 10),
                     Text(
-                      'Luyện riêng từng phần',
+                      'Đánh giá ứng dụng',
                       style: TextStyle(fontSize: 16),
                     ),
                   ],
@@ -82,7 +138,7 @@ class _LibraryState extends State<LibraryPage> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            Padding(padding: EdgeInsets.only(top: 10.0)),
             ButtonTheme(
               height: 50,
               child: RaisedButton(
@@ -91,10 +147,10 @@ class _LibraryState extends State<LibraryPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Icon(Icons.menu_book_outlined),
+                    Icon(Icons.share),
                     SizedBox(width: 10),
                     Text(
-                      'Từ vựng',
+                      'Chia sẻ cho bạn bè',
                       style: TextStyle(fontSize: 16),
                     ),
                   ],
@@ -104,7 +160,7 @@ class _LibraryState extends State<LibraryPage> {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            Padding(padding: EdgeInsets.only(top: 10.0)),
             ButtonTheme(
               height: 50,
               child: RaisedButton(
@@ -113,54 +169,10 @@ class _LibraryState extends State<LibraryPage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: <Widget>[
-                    Icon(Icons.sort_by_alpha),
+                    Icon(Icons.info),
                     SizedBox(width: 10),
                     Text(
-                      'Ngữ pháp',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.bubble_chart),
-                    SizedBox(width: 10),
-                    Text(
-                      'Tip làm bài',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
-              ),
-            ),
-            SizedBox(height: 10),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.history),
-                    SizedBox(width: 10),
-                    Text(
-                      'Lịch sử',
+                      'Giới thiệu',
                       style: TextStyle(fontSize: 16),
                     ),
                   ],
