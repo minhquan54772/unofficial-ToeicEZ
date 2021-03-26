@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:toeic/blocs/authentication_bloc.dart';
 import 'package:toeic/events/authentication_event.dart';
+import 'package:toeic/pages/account_page.dart';
 import 'package:toeic/pages/library_page.dart';
 import 'package:toeic/pages/progress_page.dart';
 import 'package:toeic/temp/iPhone12ProMax1.dart';
@@ -23,10 +24,7 @@ class _HomePageState extends State<HomePage> {
       'Index 2: Bảng tin',
       style: TextStyle(fontSize: 30),
     ),
-    Text(
-      'Index 3: Tài khoản',
-      style: TextStyle(fontSize: 30),
-    ),
+    AccountPage(),
   ];
 
   static List<Widget> _titleOptions = <Widget>[
@@ -61,21 +59,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: _titleOptions[_selectedIndex],
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.replay),
-          onPressed: () {
-            print("Refresh");
-          },
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.exit_to_app),
-            onPressed: () {
-              BlocProvider.of<AuthenticationBloc>(context)
-                  .add(AuthenticationEventLoggedOut());
-            },
-          )
-        ],
+        actions: <Widget>[],
       ),
       body: Center(
         // child: Text('This is HomePage!', style: TextStyle(fontSize: 30, color: Colors.green),),

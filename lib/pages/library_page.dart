@@ -19,13 +19,19 @@ class _LibraryState extends State<LibraryPage> {
           children: <Widget>[
             ButtonTheme(
               height: 50,
-              child: RaisedButton.icon(
-                onPressed: () {},
+              child: RaisedButton(
+                onPressed: (){},
                 color: Colors.white70,
-                icon: Icon(Icons.library_books),
-                label: Text(
-                  'Bài kiểm tra TOEIC đầy đủ',
-                  style: TextStyle(fontSize: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(Icons.library_books),
+                    SizedBox(width: 10),
+                    Text(
+                      'Bài kiểm tra TOEIC đầy đủ',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
@@ -34,13 +40,19 @@ class _LibraryState extends State<LibraryPage> {
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
-              child: RaisedButton.icon(
-                onPressed: () {},
+              child: RaisedButton(
+                onPressed: (){},
                 color: Colors.white70,
-                icon: Icon(Icons.wysiwyg),
-                label: Text(
-                  'Bài kiểm tra rút gọn',
-                  style: TextStyle(fontSize: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(Icons.mode_edit),
+                    SizedBox(width: 10),
+                    Text(
+                      'Bài kiểm tra rút gọn',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
@@ -49,13 +61,19 @@ class _LibraryState extends State<LibraryPage> {
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
-              child: RaisedButton.icon(
-                onPressed: () {},
+              child: RaisedButton(
+                onPressed: (){},
                 color: Colors.white70,
-                icon: Icon(Icons.list),
-                label: Text(
-                  'Luyện riêng từng phần',
-                  style: TextStyle(fontSize: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(Icons.list),
+                    SizedBox(width: 10),
+                    Text(
+                      'Luyện riêng từng phần',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
@@ -64,13 +82,19 @@ class _LibraryState extends State<LibraryPage> {
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
-              child: RaisedButton.icon(
-                onPressed: () {},
+              child: RaisedButton(
+                onPressed: (){},
                 color: Colors.white70,
-                icon: Icon(Icons.menu_book_outlined),
-                label: Text(
-                  'Từ vựng',
-                  style: TextStyle(fontSize: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(Icons.menu_book_outlined),
+                    SizedBox(width: 10),
+                    Text(
+                      'Từ vựng',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
@@ -79,13 +103,19 @@ class _LibraryState extends State<LibraryPage> {
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
-              child: RaisedButton.icon(
-                onPressed: () {},
+              child: RaisedButton(
+                onPressed: (){},
                 color: Colors.white70,
-                icon: Icon(Icons.sort_by_alpha),
-                label: Text(
-                  'Ngữ pháp',
-                  style: TextStyle(fontSize: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(Icons.sort_by_alpha),
+                    SizedBox(width: 10),
+                    Text(
+                      'Ngữ pháp',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
@@ -94,13 +124,19 @@ class _LibraryState extends State<LibraryPage> {
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
-              child: RaisedButton.icon(
-                onPressed: () {},
+              child: RaisedButton(
+                onPressed: (){},
                 color: Colors.white70,
-                icon: Icon(Icons.bubble_chart),
-                label: Text(
-                  'Tip làm bài',
-                  style: TextStyle(fontSize: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(Icons.bubble_chart),
+                    SizedBox(width: 10),
+                    Text(
+                      'Tip làm bài',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
@@ -109,13 +145,19 @@ class _LibraryState extends State<LibraryPage> {
             SizedBox(height: 10),
             ButtonTheme(
               height: 50,
-              child: RaisedButton.icon(
-                onPressed: () {},
+              child: RaisedButton(
+                onPressed: (){},
                 color: Colors.white70,
-                icon: Icon(Icons.history),
-                label: Text(
-                  'Lịch sử',
-                  style: TextStyle(fontSize: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: <Widget>[
+                    Icon(Icons.history),
+                    SizedBox(width: 10),
+                    Text(
+                      'Lịch sử',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ],
                 ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
