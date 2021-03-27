@@ -9,7 +9,7 @@ abstract class AuthenticationState extends Equatable {
 }
 class AuthenticationStateInitial extends AuthenticationState {}
 class AuthenticationStateSuccess extends AuthenticationState {
-  final FirebaseUser firebaseUser;
+  final User firebaseUser;
   const AuthenticationStateSuccess({this.firebaseUser});
   @override
   // TODO: implement props
