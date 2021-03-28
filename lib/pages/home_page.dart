@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:toeic/pages/account_page.dart';
 import 'package:toeic/pages/library_page.dart';
+import 'package:toeic/pages/news_page.dart';
 import 'package:toeic/pages/progress_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -16,10 +17,7 @@ class _HomePageState extends State<HomePage> {
   static List<Widget> _widgetOptions = <Widget>[
     ProgressPage(),
     LibraryPage(),
-    Text(
-      'Index 2: Bảng tin',
-      style: TextStyle(fontSize: 30),
-    ),
+    NewsPage(),
     AccountPage(),
   ];
 

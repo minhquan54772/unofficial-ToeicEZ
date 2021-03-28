@@ -7,6 +7,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:toeic/blocs/authentication_bloc.dart';
 import 'package:toeic/events/authentication_event.dart';
 
+import 'button/oneline_stretch_button.dart';
+
 class AccountPage extends StatefulWidget {
   @override
   _AccountState createState() => _AccountState();
@@ -74,114 +76,29 @@ class _AccountState extends State<AccountPage> {
                 ),
               ],
             ),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.verified),
-                    SizedBox(width: 10),
-                    Text(
-                      'Kích hoạt tài khoản',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
-              ),
+            OneLineStretchButton(
+              content: 'Kích hoạt tài khoản',
+              icon: Icon(Icons.verified, color: Colors.black),
             ),
             Padding(padding: EdgeInsets.only(top: 10.0)),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(FontAwesomeIcons.facebook),
-                    SizedBox(width: 10),
-                    Text(
-                      'Fanpage ToeicEZ',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
-              ),
+            OneLineStretchButton(
+              content: 'Fanpage ToeicEZ',
+              icon: Icon(FontAwesomeIcons.facebook, color: Colors.black),
             ),
             Padding(padding: EdgeInsets.only(top: 10.0)),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.star),
-                    SizedBox(width: 10),
-                    Text(
-                      'Đánh giá ứng dụng',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
-              ),
+            OneLineStretchButton(
+              content: 'Đánh giá ứng dụng',
+              icon: Icon(Icons.star, color: Colors.black),
             ),
             Padding(padding: EdgeInsets.only(top: 10.0)),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.share),
-                    SizedBox(width: 10),
-                    Text(
-                      'Chia sẻ cho bạn bè',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
-              ),
+            OneLineStretchButton(
+              content: 'Chia sẻ cho bạn bè',
+              icon: Icon(Icons.share, color: Colors.black),
             ),
             Padding(padding: EdgeInsets.only(top: 10.0)),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.info),
-                    SizedBox(width: 10),
-                    Text(
-                      'Giới thiệu',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                ),
-              ),
+            OneLineStretchButton(
+              content: 'Giới thiệu',
+              icon: Icon(Icons.info, color: Colors.black),
             ),
           ],
         ),
