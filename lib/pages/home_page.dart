@@ -1,13 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:toeic/blocs/authentication_bloc.dart';
-import 'package:toeic/events/authentication_event.dart';
 import 'package:toeic/pages/account_page.dart';
 import 'package:toeic/pages/library_page.dart';
+import 'package:toeic/pages/news_page.dart';
 import 'package:toeic/pages/progress_page.dart';
-import 'package:toeic/temp/iPhone12ProMax1.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -20,10 +17,7 @@ class _HomePageState extends State<HomePage> {
   static List<Widget> _widgetOptions = <Widget>[
     ProgressPage(),
     LibraryPage(),
-    Text(
-      'Index 2: Bảng tin',
-      style: TextStyle(fontSize: 30),
-    ),
+    NewsPage(),
     AccountPage(),
   ];
 

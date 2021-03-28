@@ -19,22 +19,22 @@ class UserRepository {
         password: password.trim()
     );
   }
-  Future<FirebaseUser> signInWithGoogle() async {
+  Future<User> signInWithGoogle() async {
     final GoogleSignInAccount googleSignInAccount = await _googleSignIn.signIn();
     final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
-    final AuthCredential authCredential = GoogleAuthProvider.getCredential(
+    final AuthCredential authCredential = GoogleAuthProvider.credential(
         idToken: googleSignInAuthentication.idToken,
         accessToken: googleSignInAuthentication.accessToken
     );
     await _firebaseAuth.signInWithCredential(authCredential);
   }
-  Future<FirebaseUser> loginWithFacebook() async {
+  Future<User> loginWithFacebook() async {
       final FacebookLoginResult facebookLoginResult = await _facebookLogin.logIn(['email']);
       final FacebookAccessToken accessToken = facebookLoginResult.accessToken;
 
       // Create a credential from the access token
-      final AuthCredential credential = FacebookAuthProvider.getCredential(
-        accessToken: accessToken.token,
+      final AuthCredential credential = FacebookAuthProvider.credential(
+        accessToken.token
       );
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
@@ -52,9 +52,12 @@ class UserRepository {
     ]);
   }
   Future<bool> isSignedIn() async {
-    return await _firebaseAuth.currentUser() != null;
+    return await _firebaseAuth.currentUser != null;
   }
-  Future<FirebaseUser> getUser() async {
-    return await _firebaseAuth.currentUser();
+  Future<User> getUser() async {
+    return await _firebaseAuth.currentUser;
+  }
+  GoogleSignInAccount getGoogleUser() {
+    return _googleSignIn.currentUser;
   }
 }

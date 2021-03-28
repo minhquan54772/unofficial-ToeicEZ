@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:toeic/pages/button/oneline_stretch_button.dart';
 
 class LibraryPage extends StatefulWidget {
   @override
@@ -17,151 +18,39 @@ class _LibraryState extends State<LibraryPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.library_books),
-                    SizedBox(width: 10),
-                    Text(
-                      'Bài kiểm tra TOEIC đầy đủ',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-              ),
+            OneLineStretchButton(
+              content: 'Bài kiểm tra TOEIC đầy đủ',
+              icon: Icon(Icons.library_books, color: Colors.black),
             ),
             SizedBox(height: 10),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.mode_edit),
-                    SizedBox(width: 10),
-                    Text(
-                      'Bài kiểm tra rút gọn',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-              ),
+            OneLineStretchButton(
+              content: 'Bài kiểm tra rút gọn',
+              icon: Icon(Icons.mode_edit, color: Colors.black),
             ),
             SizedBox(height: 10),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.list),
-                    SizedBox(width: 10),
-                    Text(
-                      'Luyện riêng từng phần',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-              ),
+            OneLineStretchButton(
+              content: 'Luyện riêng từng phần',
+              icon: Icon(Icons.list, color: Colors.black),
             ),
             SizedBox(height: 10),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.menu_book_outlined),
-                    SizedBox(width: 10),
-                    Text(
-                      'Từ vựng',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-              ),
+            OneLineStretchButton(
+              content: 'Từ vựng',
+              icon: Icon(Icons.menu_book_outlined, color: Colors.black),
             ),
             SizedBox(height: 10),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.sort_by_alpha),
-                    SizedBox(width: 10),
-                    Text(
-                      'Ngữ pháp',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-              ),
+            OneLineStretchButton(
+              content: 'Ngữ pháp',
+              icon: Icon(Icons.sort_by_alpha, color: Colors.black),
             ),
             SizedBox(height: 10),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.bubble_chart),
-                    SizedBox(width: 10),
-                    Text(
-                      'Tip làm bài',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-              ),
+            OneLineStretchButton(
+              content: 'Tip làm bài',
+              icon: Icon(Icons.bubble_chart, color: Colors.black),
             ),
             SizedBox(height: 10),
-            ButtonTheme(
-              height: 50,
-              child: RaisedButton(
-                onPressed: (){},
-                color: Colors.white70,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Icon(Icons.history),
-                    SizedBox(width: 10),
-                    Text(
-                      'Lịch sử',
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ],
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-              ),
+            OneLineStretchButton(
+              content: 'Lịch sử',
+              icon: Icon(Icons.history, color: Colors.black),
             ),
           ],
         ),
