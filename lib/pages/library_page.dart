@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toeic/pages/button/oneline_stretch_button.dart';
+import 'package:toeic/pages/tipPages/part_one.dart';
+import 'package:toeic/temp/iPhone12ProMax1.dart';
 
 class LibraryPage extends StatefulWidget {
   @override
@@ -21,6 +23,7 @@ class _LibraryState extends State<LibraryPage> {
             OneLineStretchButton(
               content: 'Bài kiểm tra TOEIC đầy đủ',
               icon: Icon(Icons.library_books, color: Colors.black),
+              page: () => TipPartOne(),
             ),
             SizedBox(height: 10),
             OneLineStretchButton(

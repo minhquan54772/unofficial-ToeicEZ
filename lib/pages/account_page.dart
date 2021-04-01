@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:toeic/blocs/authentication_bloc.dart';
 import 'package:toeic/events/authentication_event.dart';
-
 import 'button/oneline_stretch_button.dart';
 
 class AccountPage extends StatefulWidget {
@@ -15,8 +15,28 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountState extends State<AccountPage> {
+  FirebaseAuth auth = FirebaseAuth.instance;
+  String displayName;
+  String email;
+
   @override
   Widget build(BuildContext context) {
+    FirebaseAuth.instance
+        .authStateChanges()
+        .listen((User user) {
+      if (user == null) {
+        print('User is currently signed out!');
+      } else {
+        print('User is signed in!');
+        this.displayName = user.displayName;
+        this.email = user.email;
+      }
+    });
+    // Changing firestore
+    // var firebaseUser =  FirebaseAuth.instance.currentUser;
+    // FirebaseFirestore.instance.collection('userData').doc(firebaseUser.uid).set({
+    //   "DisplayName" : "userX",
+    // });
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(10.0),
@@ -37,14 +57,14 @@ class _AccountState extends State<AccountPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Someone Example',
+                        '${this.displayName}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 25.0,
                         ),
                       ),
                       Padding(padding: EdgeInsets.only(top: 3.0)),
-                      Text('GG: someone.example@gmail.com'),
+                      Text('GG: ${this.email}'),
                       Padding(padding: EdgeInsets.only(top: 3.0)),
                       Text(
                         'PREMIUM USER',
