@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:toeic/pages/tipPages/tip_content.dart';
 
 class TipPartOne extends StatelessWidget {
-  final String _title = 'This is title';
+  final String _title = 'Part 1: Mô tả hình ảnh';
   final PageController controller = PageController(initialPage: 0);
 
   @override

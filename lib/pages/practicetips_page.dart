@@ -1,22 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:toeic/temp/indexed_button.dart';
+import 'package:toeic/pages/button/indexed_button.dart';
+import 'package:toeic/pages/tipPages/part_one.dart';
 
-class PracticeTip extends StatefulWidget {
+class PracticeTipPage extends StatefulWidget {
   @override
-  _PracticeTipState createState() => _PracticeTipState();
+  _PracticeTipPageState createState() => _PracticeTipPageState();
 }
 
-class _PracticeTipState extends State<PracticeTip> {
+class _PracticeTipPageState extends State<PracticeTipPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [
+            Text('Tip làm bài')
+          ],
+        ),
+      ),
       body: Padding(
         padding: EdgeInsets.all(0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            IndexedButton(content: 'Part 1: Mô tả hình ảnh', index: 1),
+            IndexedButton(content: 'Part 1: Mô tả hình ảnh', index: 1, page: () => TipPartOne(),),
             Padding(padding: EdgeInsets.only(top: 5)),
             IndexedButton(content: 'Part 2: Hỏi đáp', index: 2),
             Padding(padding: EdgeInsets.only(top: 5)),

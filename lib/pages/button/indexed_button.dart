@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 class IndexedButton extends StatelessWidget {
   final String content;
   final int index;
+  final Widget Function() page;
 
-  IndexedButton({@required content, index}):
+  IndexedButton({@required content, index, page}):
       this.content = content,
-      this.index = index;
+      this.index = index,
+      this.page = page;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,15 @@ class IndexedButton extends StatelessWidget {
              Text('${content}',style: TextStyle(color: Colors.black),)
            ],
           ),
-          onPressed: (){},
+          onPressed: () {
+            if (page != null) {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return page();
+                  })
+              );
+            }
+          }
         ),
     );
   }
