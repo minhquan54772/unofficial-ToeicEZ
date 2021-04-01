@@ -57,7 +57,4 @@ class UserRepository {
   Future<User> getUser() async {
     return await _firebaseAuth.currentUser;
   }
-  GoogleSignInAccount getGoogleUser() {
-    return _googleSignIn.currentUser;
-  }
 }

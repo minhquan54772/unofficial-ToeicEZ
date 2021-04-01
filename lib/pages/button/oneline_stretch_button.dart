@@ -4,11 +4,15 @@ import 'package:flutter/material.dart';
 class OneLineStretchButton extends StatelessWidget {
   final String content;
   final Icon icon;
+  final Widget Function() page;
+  final BuildContext context;
 
   //constructor
-  OneLineStretchButton({@required content, icon}):
+  OneLineStretchButton({@required content, icon, page, context}):
         this.content = content,
-        this.icon = icon;
+        this.icon = icon,
+        this.page = page,
+        this.context = context;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,15 @@ class OneLineStretchButton extends StatelessWidget {
             padding: EdgeInsets.all(15),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
           ),
-          onPressed: (){},
+          onPressed: (){
+            if (page != null) {
+              Navigator.push(context, MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return page();
+                  })
+              );
+            }
+          },
         )
     );
   }
