@@ -20,23 +20,29 @@ class _AccountState extends State<AccountPage> {
   String email;
 
   @override
-  Widget build(BuildContext context) {
-    FirebaseAuth.instance
-        .authStateChanges()
-        .listen((User user) {
-      if (user == null) {
-        print('User is currently signed out!');
-      } else {
-        print('User is signed in!');
-        this.displayName = user.displayName;
-        this.email = user.email;
-      }
+  void initState() {
+    super.initState();
+    getDataFromFb();
+  }
+
+  Future<void> getDataFromFb() async {
+    User user = await FirebaseAuth.instance.currentUser;
+    FirebaseFirestore.instance
+        .collection('userData')
+        .get()
+        .then((QuerySnapshot querySnapshot) {
+      querySnapshot.docs.forEach((doc) {
+        if (doc.id == user.uid) {
+          this.displayName = doc['DisplayName'];
+          this.email = doc['Email'];
+        }
+      });
     });
-    // Changing firestore
-    // var firebaseUser =  FirebaseAuth.instance.currentUser;
-    // FirebaseFirestore.instance.collection('userData').doc(firebaseUser.uid).set({
-    //   "DisplayName" : "userX",
-    // });
+    return;
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(10.0),
@@ -104,6 +110,7 @@ class _AccountState extends State<AccountPage> {
             OneLineStretchButton(
               content: 'Fanpage ToeicEZ',
               icon: Icon(FontAwesomeIcons.facebook, color: Colors.black),
+              url: 'https://www.facebook.com/toeicez/',
             ),
             Padding(padding: EdgeInsets.only(top: 10.0)),
             OneLineStretchButton(
@@ -119,6 +126,7 @@ class _AccountState extends State<AccountPage> {
             OneLineStretchButton(
               content: 'Giới thiệu',
               icon: Icon(Icons.info, color: Colors.black),
+              url: 'https://www.facebook.com/toeicez/',
             ),
           ],
         ),
