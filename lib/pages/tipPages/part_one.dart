@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toeic/pages/tipPages/tip_content.dart';
@@ -5,9 +6,20 @@ import 'package:toeic/pages/tipPages/tip_content.dart';
 class TipPartOne extends StatelessWidget {
   final String _title = 'Part 1: Mô tả hình ảnh';
   final PageController controller = PageController(initialPage: 0);
+  static String _titleContent;
+  static String _content;
 
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore.instance
+        .collection('practiceTip')
+        .get()
+        .then((QuerySnapshot querySnapshot) {
+      querySnapshot.docs.forEach((doc) {
+        _titleContent = doc["titleContent"];
+        _content = doc["content"];
+      });
+    });
     return MaterialApp(
       title: _title,
       home: Scaffold(
@@ -30,8 +42,8 @@ class TipPartOne extends StatelessWidget {
           controller: controller,
           children: <Widget>[
             TipContent(
-              titleContent: 'Tổng quan:',
-              content: 'Part 1 gồm 6 câu hỏi (từ câu 1 - 6), tương ứng với 6 hình ảnh, mỗi hình ảnh có 4 đáp án A, B, C, D để bạn lựa chọn',
+              titleContent: _titleContent,
+              content: _content,
             ),
             Center(
               child: Text('Second Page'),
