@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +7,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:toeic/blocs/authentication_bloc.dart';
 import 'package:toeic/events/authentication_event.dart';
-
 import 'button/oneline_stretch_button.dart';
 
 class AccountPage extends StatefulWidget {
@@ -15,6 +15,32 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountState extends State<AccountPage> {
+  FirebaseAuth auth = FirebaseAuth.instance;
+  String displayName;
+  String email;
+
+  @override
+  void initState() {
+    super.initState();
+    getDataFromFb();
+  }
+
+  Future<void> getDataFromFb() async {
+    User user = await FirebaseAuth.instance.currentUser;
+    FirebaseFirestore.instance
+        .collection('userData')
+        .get()
+        .then((QuerySnapshot querySnapshot) {
+      querySnapshot.docs.forEach((doc) {
+        if (doc.id == user.uid) {
+          this.displayName = doc['DisplayName'];
+          this.email = doc['Email'];
+        }
+      });
+    });
+    return;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,14 +63,14 @@ class _AccountState extends State<AccountPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        'Someone Example',
+                        '${this.displayName}',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 25.0,
                         ),
                       ),
                       Padding(padding: EdgeInsets.only(top: 3.0)),
-                      Text('GG: someone.example@gmail.com'),
+                      Text('GG: ${this.email}'),
                       Padding(padding: EdgeInsets.only(top: 3.0)),
                       Text(
                         'PREMIUM USER',
@@ -84,6 +110,7 @@ class _AccountState extends State<AccountPage> {
             OneLineStretchButton(
               content: 'Fanpage ToeicEZ',
               icon: Icon(FontAwesomeIcons.facebook, color: Colors.black),
+              url: 'https://www.facebook.com/toeicez/',
             ),
             Padding(padding: EdgeInsets.only(top: 10.0)),
             OneLineStretchButton(
@@ -99,6 +126,7 @@ class _AccountState extends State<AccountPage> {
             OneLineStretchButton(
               content: 'Giới thiệu',
               icon: Icon(Icons.info, color: Colors.black),
+              url: 'https://www.facebook.com/toeicez/',
             ),
           ],
         ),

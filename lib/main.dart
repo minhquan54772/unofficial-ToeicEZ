@@ -22,6 +22,7 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   final UserRepository _userRepository = UserRepository();
+
   @override
   Widget build(BuildContext context) {
     //signout for testing firstly

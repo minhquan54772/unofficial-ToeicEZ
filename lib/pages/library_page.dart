@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toeic/pages/button/oneline_stretch_button.dart';
+import 'package:toeic/pages/grammar_page.dart';
+import 'package:toeic/pages/history_page.dart';
+import 'package:toeic/pages/part_practice.dart';
+import 'package:toeic/pages/practicetips_page.dart';
 
 class LibraryPage extends StatefulWidget {
   @override
@@ -31,6 +35,7 @@ class _LibraryState extends State<LibraryPage> {
             OneLineStretchButton(
               content: 'Luyện riêng từng phần',
               icon: Icon(Icons.list, color: Colors.black),
+              page: () => PartPractice(),
             ),
             SizedBox(height: 10),
             OneLineStretchButton(
@@ -41,16 +46,19 @@ class _LibraryState extends State<LibraryPage> {
             OneLineStretchButton(
               content: 'Ngữ pháp',
               icon: Icon(Icons.sort_by_alpha, color: Colors.black),
+              page: () => GrammarPage(),
             ),
             SizedBox(height: 10),
             OneLineStretchButton(
               content: 'Tip làm bài',
               icon: Icon(Icons.bubble_chart, color: Colors.black),
+              page: () => PracticeTipPage(),
             ),
             SizedBox(height: 10),
             OneLineStretchButton(
               content: 'Lịch sử',
               icon: Icon(Icons.history, color: Colors.black),
+              page: () => HistoryPage(),
             ),
           ],
         ),
