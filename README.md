@@ -9,7 +9,7 @@ Với đề tài này, ứng dụng được tập trung phát triển các tín
 
 
 ## Hướng dẫn cài đặt:
-1. Clone github repository:
+1. Clone github repository :
 ```git clone https://github.com/minhquan54772/unofficial-ToeicEZ```
 3. Mở thư mục chứa code vừa được clone trong IDE (Visual Studio Code, Android Studio,...)
 4. Kết nối với thiết bị (Android) qua USB hoặc kết nối với máy ảo Android
