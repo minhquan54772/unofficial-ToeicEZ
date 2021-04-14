@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toeic/pages/button/indexed_button.dart';
 import 'package:toeic/pages/tipPages/part_one.dart';
+import 'package:toeic/pages/tipPages/part_two.dart';
 
 class PracticeTipPage extends StatefulWidget {
   @override
@@ -25,9 +26,7 @@ class _PracticeTipPageState extends State<PracticeTipPage> {
     return Scaffold(
       appBar: AppBar(
         title: Row(
-          children: [
-            Text('Tip làm bài')
-          ],
+          children: [Text('Tip làm bài')],
         ),
       ),
       body: Padding(
@@ -35,9 +34,17 @@ class _PracticeTipPageState extends State<PracticeTipPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            IndexedButton(content: parts[1], index: 1, page: () => TipPartOne(),),
+            IndexedButton(
+              content: 'Part 1: Mô tả hình ảnh',
+              index: 1,
+              page: () => TipPartOne(),
+            ),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: 'Part 2: Hỏi đáp', index: 2),
+            IndexedButton(
+              content: 'Part 2: Hỏi đáp',
+              index: 2,
+              page: () => TipPart2(),
+            ),
             Padding(padding: EdgeInsets.only(top: 5)),
             IndexedButton(content: 'Part 3: Đoạn hội thoại', index: 3),
             Padding(padding: EdgeInsets.only(top: 5)),
