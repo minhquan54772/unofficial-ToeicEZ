@@ -83,50 +83,50 @@ class _LoginPageState extends State<LoginPage> {
                         fontSize: 19,
                     ),
                   ),
-                  // TextFormField(
-                  //   controller: _emailController,
-                  //   decoration: InputDecoration(
-                  //     icon: Icon(Icons.email),
-                  //     labelText: 'Enter your email'
-                  //   ),
-                  //   keyboardType: TextInputType.emailAddress,
-                  //   autovalidateMode: AutovalidateMode.always,
-                  //   autocorrect: false,
-                  //   validator: (_) {
-                  //     return loginState.isValidEmail ? null : 'Invalid email format';
-                  //   },
-                  // ),
-                  // TextFormField(
-                  //   controller: _passwordController,
-                  //   decoration: InputDecoration(
-                  //       icon: Icon(Icons.lock),
-                  //       labelText: 'Enter your password'
-                  //   ),
-                  //   obscureText: true,
-                  //   autovalidateMode: AutovalidateMode.always,
-                  //   autocorrect: false,
-                  //   validator: (_) {
-                  //     return loginState.isValidPassword ? null : 'Invalid password format';
-                  //   }),
+                  TextFormField(
+                    controller: _emailController,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.email),
+                      labelText: 'Enter your email'
+                    ),
+                    keyboardType: TextInputType.emailAddress,
+                    autovalidateMode: AutovalidateMode.always,
+                    autocorrect: false,
+                    validator: (_) {
+                      return loginState.isValidEmail ? null : 'Invalid email format';
+                    },
+                  ),
+                  TextFormField(
+                    controller: _passwordController,
+                    decoration: InputDecoration(
+                        icon: Icon(Icons.lock),
+                        labelText: 'Enter your password'
+                    ),
+                    obscureText: true,
+                    autovalidateMode: AutovalidateMode.always,
+                    autocorrect: false,
+                    validator: (_) {
+                      return loginState.isValidPassword ? null : 'Invalid password format';
+                    }),
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
-                        // LoginButton(
-                        //   onPressed: isLoginButtonEnabled(loginState)?
-                        //   _onLoginEmailAndPassword : null, //check is enable?
-                        // ),
-                        // Padding(padding: EdgeInsets.only(top: 10),),
-                        // RegisterUserButton(userRepository: _userRepository,),
-                        // Padding(padding: EdgeInsets.only(top: 10),),
-                        // Text(
-                        //   '- OR -',
-                        //   textAlign: TextAlign.center,
-                        //   style: TextStyle(
-                        //     color: Color.fromRGBO(144, 137, 137, 1),
-                        //   ),
-                        // ),
+                        LoginButton(
+                          onPressed: isLoginButtonEnabled(loginState)?
+                          _onLoginEmailAndPassword : null, //check is enable?
+                        ),
+                        Padding(padding: EdgeInsets.only(top: 10),),
+                        RegisterUserButton(userRepository: _userRepository,),
+                        Padding(padding: EdgeInsets.only(top: 10),),
+                        Text(
+                          '- OR -',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color.fromRGBO(144, 137, 137, 1),
+                          ),
+                        ),
                         Padding(padding: EdgeInsets.only(top: 100),),
                         GoogleLoginButton(),
                         Padding(padding: EdgeInsets.only(top: 10),),
