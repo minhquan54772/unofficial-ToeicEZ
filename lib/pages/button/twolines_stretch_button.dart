@@ -25,16 +25,19 @@ class TwoLinesStretchButton extends StatelessWidget {
               this.icon,
               Padding(padding: EdgeInsets.only(left: 10.0)),
               Column(
-               mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+
                   Text(
                     '${this.title}',
-                    style: TextStyle(fontSize: 16, color: Colors.black),
+                    style: TextStyle(fontSize: 16, color: Colors.black, ),
+
                   ),
+
                   Padding(padding: EdgeInsets.only(top: 5)),
                   Text(
                     '${this.content}',
-                    style: TextStyle(fontSize: 14, color: Colors.grey),
+                    style: TextStyle(fontSize: 14, color: Colors.black87),
                   ),
                 ],
               ),
