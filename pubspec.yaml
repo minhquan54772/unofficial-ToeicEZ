@@ -65,3 +65,4 @@ flutter:
     - assets/images/icons/icon_notification.svg
     - assets/images/icons/icon_profile.svg
     - assets/images/icons/icon_user.svg
+    - assets/json/questions.json

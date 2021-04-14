@@ -11,7 +11,15 @@ class PracticeTipPage extends StatefulWidget {
 }
 
 class _PracticeTipPageState extends State<PracticeTipPage> {
-  static List parts = ['', '', '', '', '', '', '', '', '', ''];
+  static List parts = [
+    'Part 1: Mô tả hình ảnh',
+    'Part 2: Hỏi đáp',
+    'Part 3: Đoạn hội thoại',
+    'Part 4: Bài nói chuyện',
+    'Part 5: Điền vào chỗ trống',
+    'Part 6: Điền vào đoạn văn',
+    'Part 7: Đọc hiểu đoạn văn'
+  ];
   @override
   Widget build(BuildContext context) {
     FirebaseFirestore.instance
@@ -35,26 +43,26 @@ class _PracticeTipPageState extends State<PracticeTipPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             IndexedButton(
-              content: 'Part 1: Mô tả hình ảnh',
+              content: parts[0],
               index: 1,
               page: () => TipPartOne(),
             ),
             Padding(padding: EdgeInsets.only(top: 5)),
             IndexedButton(
-              content: 'Part 2: Hỏi đáp',
+              content: parts[1],
               index: 2,
               page: () => TipPart2(),
             ),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: 'Part 3: Đoạn hội thoại', index: 3),
+            IndexedButton(content: parts[2], index: 3),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: 'Part 4: Bài nói chuyện', index: 4),
+            IndexedButton(content: parts[3], index: 4),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: 'Part 5: Điền vào chỗ trống', index: 5),
+            IndexedButton(content: parts[4], index: 5),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: 'Part 6: Điền vào đoạn văn', index: 6),
+            IndexedButton(content: parts[5], index: 6),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: 'Part 7: Đọc hiểu đoạn văn', index: 7),
+            IndexedButton(content: parts[6], index: 7),
           ],
         ),
       ),

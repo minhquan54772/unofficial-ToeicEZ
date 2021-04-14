@@ -9,17 +9,21 @@ class TipPart2 extends StatelessWidget {
   static String _titleContent;
   static String _content;
 
+  Future<void> getContent() async {
+    await FirebaseFirestore.instance
+        .collection('practiceTip')
+        .doc(_title)
+        .get()
+        .then((DocumentSnapshot documentSnapshot) {
+      if (documentSnapshot.exists) {
+        _titleContent = documentSnapshot.data()["titleContent"];
+        _content = documentSnapshot.data()["content"];
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    FirebaseFirestore.instance
-        .collection('practiceTip')
-        .get()
-        .then((QuerySnapshot querySnapshot) {
-      querySnapshot.docs.forEach((doc) {
-        _titleContent = doc["titleContent"];
-        _content = doc["content"];
-      });
-    });
     return MaterialApp(
       title: _title,
       home: Scaffold(
