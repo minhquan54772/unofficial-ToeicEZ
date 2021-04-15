@@ -37,6 +37,7 @@ dependencies:
   flutter_facebook_login: ^3.0.0
   percent_indicator: ^2.1.9+1
   url_launcher: ^6.0.3
+  smart_select: ^4.3.2
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
@@ -65,3 +66,4 @@ flutter:
     - assets/images/icons/icon_notification.svg
     - assets/images/icons/icon_profile.svg
     - assets/images/icons/icon_user.svg
+    - assets/data/grammar_one_data.json

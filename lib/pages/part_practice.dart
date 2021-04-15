@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toeic/pages/button/twolines_stretch_button.dart';
+import 'package:toeic/pages/partPractice/part_practice_one.dart';
 
 class PartPractice extends StatefulWidget {
   @override
@@ -23,6 +24,7 @@ class _PartPracticeState extends State<PartPractice> {
               title: 'Phần 1',
               content: 'Mô tả tranh',
               icon: Icon(Icons.image, color: Colors.black,),
+              // page: () => PartPracticeOne(),
             ),
             Padding(padding: EdgeInsets.only(top: 5)),
             TwoLinesStretchButton(
@@ -40,7 +42,7 @@ class _PartPracticeState extends State<PartPractice> {
             TwoLinesStretchButton(
               title: 'Phần 4',
               content: 'Bài nói ngắn',
-              icon: Icon(Icons.wysiwyg, color: Colors.black,),
+              icon: Icon(Icons.wysiwyg, color: Colors.black),
             ),
             Padding(padding: EdgeInsets.only(top: 5)),
             TwoLinesStretchButton(

@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toeic/pages/button/indexed_button.dart';
-import 'package:toeic/pages/tipPages/part_one.dart';
+import 'package:toeic/pages/tipPages/tip_part_one.dart';
 
 class PracticeTipPage extends StatefulWidget {
   @override

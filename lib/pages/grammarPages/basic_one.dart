@@ -1,11 +1,22 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BasicGrammarOne extends StatelessWidget {
   final String _title = 'Cấu trúc chung của một câu';
+  static String content;
 
   @override
   Widget build(BuildContext context) {
+    FirebaseFirestore.instance
+        .collection('basicGrammar')
+        .get()
+        .then((QuerySnapshot querySnapshot) {
+          querySnapshot.docs.forEach((doc) {
+            content = doc["content"];
+          });
+        });
     return MaterialApp(
         title: _title,
         home: Scaffold(
@@ -24,7 +35,11 @@ class BasicGrammarOne extends StatelessWidget {
             ),
           ),
           body: Center(
-            child: Text('Content here'),
+            child: SingleChildScrollView(
+              child: Text(
+                '${content}'
+              ),
+            ),
           )
         ),
     );
