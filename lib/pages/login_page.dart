@@ -15,10 +15,10 @@ import 'package:toeic/states/login_state.dart';
 class LoginPage extends StatefulWidget {
   final UserRepository _userRepository;
   //constructor
-  LoginPage({Key key, @required UserRepository userRepository}):
-      assert(userRepository != null),
-      _userRepository = userRepository,
-      super(key: key);
+  LoginPage({Key key, @required UserRepository userRepository})
+      : assert(userRepository != null),
+        _userRepository = userRepository,
+        super(key: key);
   @override
   State<StatefulWidget> createState() => _LoginPageState();
 }
@@ -39,12 +39,16 @@ class _LoginPageState extends State<LoginPage> {
     });
     _passwordController.addListener(() {
       //pass
-      _loginBloc.add(LoginEventPasswordChanged(password: _passwordController.text));
+      _loginBloc
+          .add(LoginEventPasswordChanged(password: _passwordController.text));
     });
   }
-  bool get isPopulated => _emailController.text.isNotEmpty && _passwordController.text.isNotEmpty;
+
+  bool get isPopulated =>
+      _emailController.text.isNotEmpty && _passwordController.text.isNotEmpty;
   bool isLoginButtonEnabled(LoginState loginState) =>
-      loginState.isValidEmailAndPassword & isPopulated && !loginState.isSubmitting;
+      loginState.isValidEmailAndPassword & isPopulated &&
+      !loginState.isSubmitting;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +61,8 @@ class _LoginPageState extends State<LoginPage> {
           } else if (loginState.isSubmitting) {
             print('Logging in');
           } else if (loginState.isSuccess) {
-            BlocProvider.of<AuthenticationBloc>(context).add(AuthenticationEventLoggedIn());
+            BlocProvider.of<AuthenticationBloc>(context)
+                .add(AuthenticationEventLoggedIn());
           }
           return Padding(
             padding: EdgeInsets.all(20.0),
@@ -71,16 +76,15 @@ class _LoginPageState extends State<LoginPage> {
                         image: DecorationImage(
                             image: AssetImage('assets/images/Toeicez.png'),
                             fit: BoxFit.fitWidth),
-                      )
-                  ),
+                      )),
                   SizedBox(height: 10),
                   Text(
                     'Learn TOEIC your own pace',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                        color: Color.fromRGBO(144, 137, 137, 1),
-                        fontFamily: 'Roboto',
-                        fontSize: 19,
+                      color: Color.fromRGBO(144, 137, 137, 1),
+                      fontFamily: 'Roboto',
+                      fontSize: 19,
                     ),
                   ),
                   // TextFormField(
@@ -127,9 +131,13 @@ class _LoginPageState extends State<LoginPage> {
                         //     color: Color.fromRGBO(144, 137, 137, 1),
                         //   ),
                         // ),
-                        Padding(padding: EdgeInsets.only(top: 100),),
+                        Padding(
+                          padding: EdgeInsets.only(top: 100),
+                        ),
                         GoogleLoginButton(),
-                        Padding(padding: EdgeInsets.only(top: 10),),
+                        Padding(
+                          padding: EdgeInsets.only(top: 10),
+                        ),
                         FacebookLoginButton(),
                       ],
                     ),
@@ -142,9 +150,9 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+
   void _onLoginEmailAndPassword() {
     _loginBloc.add(LoginEventWithEmailAndPasswordPressed(
-        email: _emailController.text,
-        password: _passwordController.text));
+        email: _emailController.text, password: _passwordController.text));
   }
 }
