@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BasicGrammarSeven extends StatelessWidget {
-  final String _title = 'Một số động từ đặc biệt (need, dare, to be, get)';
+  final String _title = 'Một số động từ đặc biệt';
   static String content;
 
   @override

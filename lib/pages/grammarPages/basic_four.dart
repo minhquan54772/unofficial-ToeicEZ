@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BasicGrammarFour extends StatelessWidget {
-  final String _title = 'Sự hòa hợp giữa chủ ngữ và động từ';
+  final String _title = 'Sự hòa hợp giữa noun và verb';
   static String content;
 
   @override

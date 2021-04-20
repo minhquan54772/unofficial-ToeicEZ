@@ -2,7 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'button/indexed_button.dart';
+import 'grammarPages/basic_eight.dart';
+import 'grammarPages/basic_eleven.dart';
+import 'grammarPages/basic_five.dart';
+import 'grammarPages/basic_four.dart';
+import 'grammarPages/basic_nine.dart';
 import 'grammarPages/basic_one.dart';
+import 'grammarPages/basic_seven.dart';
+import 'grammarPages/basic_six.dart';
+import 'grammarPages/basic_ten.dart';
+import 'grammarPages/basic_three.dart';
 import 'grammarPages/basic_two.dart';
 
 class GrammarPage extends StatelessWidget {
@@ -48,25 +57,25 @@ class GrammarPage extends StatelessWidget {
                      children: <Widget>[
                        IndexedButton(content: 'Cấu trúc chung của một câu', index: 1, page: () => BasicGrammarOne(),),
                        Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Noun phrase (Ngữ danh từ)', index: 2),
+                       IndexedButton(content: 'Noun phrase (Ngữ danh từ)', index: 2, page: () => BasicGrammarTwo(),),
                        Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Verb phrase (Ngữ động từ)', index: 3),
+                       IndexedButton(content: 'Verb phrase (Ngữ động từ)', index: 3, page: () => BasicGrammarThree(),),
                        Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Sự hòa hợp giữa chủ ngữ và động từ', index: 4),
+                       IndexedButton(content: 'Sự hòa hợp giữa noun và verb', index: 4, page: () => BasicGrammarFour(),),
                        Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Đại từ', index: 5),
+                       IndexedButton(content: 'Đại từ', index: 5, page: () => BasicGrammarFive(),),
                        Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Tân ngữ và các vấn đề liên quan', index: 6),
+                       IndexedButton(content: 'Tân ngữ và các vấn đề liên quan', index: 6, page: () => BasicGrammarSix(),),
                        Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Một số động từ đặc biệt (need,dare,to be,get)', index: 7),
+                       IndexedButton(content: 'Một số động từ đặc biệt', index: 7, page: () => BasicGrammarSeven(),),
                        Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Câu hỏi', index: 8),
+                       IndexedButton(content: 'Câu hỏi', index: 8, page: () => BasicGrammarEight(),),
                        Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Lối nói phụ họa', index: 9),
+                       IndexedButton(content: 'Lối nói phụ họa', index: 9, page: () => BasicGrammarNine(),),
                        Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Câu phủ định (negation)', index: 10),
+                       IndexedButton(content: 'Câu phủ định (negation)', index: 10, page: () => BasicGrammarTen(),),
                        Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Câu mệnh lệnh', index: 11),
+                       IndexedButton(content: 'Câu mệnh lệnh', index: 11, page: () => BasicGrammarEleven(),),
                     ],
                   ),
                 ),
