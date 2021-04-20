@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'button/indexed_button.dart';
 import 'grammarPages/basic_one.dart';
+import 'grammarPages/basic_two.dart';
 
 class GrammarPage extends StatelessWidget {
   final tab = TabBar(tabs: <Tab>[
