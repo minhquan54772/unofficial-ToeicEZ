@@ -13,6 +13,16 @@ import 'grammarPages/basic_six.dart';
 import 'grammarPages/basic_ten.dart';
 import 'grammarPages/basic_three.dart';
 import 'grammarPages/basic_two.dart';
+import 'grammarPages/common_eight.dart';
+import 'grammarPages/common_five.dart';
+import 'grammarPages/common_four.dart';
+import 'grammarPages/common_one.dart';
+import 'grammarPages/common_seven.dart';
+import 'grammarPages/common_six.dart';
+import 'grammarPages/common_ten.dart';
+import 'grammarPages/common_three.dart';
+import 'grammarPages/common_two.dart';
+import 'grammarPages/conmon_nine.dart';
 
 class GrammarPage extends StatelessWidget {
   final tab = TabBar(tabs: <Tab>[
@@ -30,8 +40,8 @@ class GrammarPage extends StatelessWidget {
             bottom: TabBar(
               labelStyle: TextStyle(fontSize: 20),
               tabs: [
-                Tab(text: 'Thông dụng',),
                 Tab(text: 'Cơ bản',),
+                Tab(text: 'Thông dụng',),
               ],
             ),
             title: Row(
@@ -87,25 +97,25 @@ class GrammarPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      IndexedButton(content: 'Present simple', index: 1, page: () => BasicGrammarOne(),),
+                      IndexedButton(content: 'Present simple', index: 1, page: () => CommonGrammarOne(),),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present continuous', index: 2),
+                      IndexedButton(content: 'Present continuous', index: 2, page: () => CommonGrammarTwo(),),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present continuous and present simple(1)', index: 3),
+                      IndexedButton(content: 'Present continuous and present simple(1)', index: 3, page: () => CommonGrammarThree(),),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present continuous and present simple(2)', index: 4),
+                      IndexedButton(content: 'Present continuous and present simple(2)', index: 4, page: () => CommonGrammarFour(),),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Past simple', index: 5),
+                      IndexedButton(content: 'Past simple', index: 5, page: () => CommonGrammarFive(),),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Past continuous', index: 6),
+                      IndexedButton(content: 'Past continuous', index: 6, page: () => CommonGrammarSix(),),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present perfect (1)', index: 7),
+                      IndexedButton(content: 'Present perfect (1)', index: 7, page: () => CommonGrammarSeven(),),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present perfect (2)', index: 8),
+                      IndexedButton(content: 'Present perfect (2)', index: 8, page: () => CommonGrammarEight(),),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present continuous', index: 9),
+                      IndexedButton(content: 'Present continuous', index: 9, page: () => CommonGrammarNine(),),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present continuous and simple', index: 10),
+                      IndexedButton(content: 'Present continuous and simple', index: 10, page: () => CommonGrammarTen(),),
                       
                     ],
                   ),
