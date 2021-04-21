@@ -3,27 +3,30 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toeic/pages/tipPages/tip_content.dart';
 
-class TipPart2 extends StatelessWidget {
-  final String _title = 'Part 2: Hỏi đáp';
+class TipPart1 extends StatelessWidget {
+  final String _title = 'Part 1: Mô tả hình ảnh';
   final PageController controller = PageController(initialPage: 0);
-  static String _titleContent;
-  static String _content;
+  static List _contentTitles = [];
+  static List _contents = [];
 
-  Future<void> getContent() async {
-    await FirebaseFirestore.instance
+  @override
+  @override
+  Widget build(BuildContext context) {
+    FirebaseFirestore.instance
         .collection('practiceTip')
         .doc(_title)
         .get()
         .then((DocumentSnapshot documentSnapshot) {
       if (documentSnapshot.exists) {
-        _titleContent = documentSnapshot.data()["titleContent"];
-        _content = documentSnapshot.data()["content"];
+        Map data = documentSnapshot.data();
+        var temp = data.keys.toList();
+        temp.sort();
+        _contentTitles = temp.reversed.toList();
+        for (var tit in _contentTitles) {
+          _contents.add(data[tit]);
+        }
       }
     });
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return MaterialApp(
       title: _title,
       home: Scaffold(
@@ -45,16 +48,11 @@ class TipPart2 extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           controller: controller,
           children: <Widget>[
-            TipContent(
-              titleContent: _titleContent,
-              content: _content,
-            ),
-            Center(
-              child: Text('Second Page'),
-            ),
-            Center(
-              child: Text('Third Page'),
-            )
+            for (var i = 0; i < _contentTitles.length; i++)
+              TipContent(
+                contentTitle: _contentTitles[i],
+                content: _contents[i],
+              )
           ],
         ),
       ),

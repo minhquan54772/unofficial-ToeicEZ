@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toeic/pages/tipPages/tip_content.dart';
 
-class TipPartOne extends StatelessWidget {
-  final String _title = 'Part 1: Mô tả hình ảnh';
+class TipPart5 extends StatelessWidget {
+  final String _title = 'Part 5: Điền vào chỗ trống';
   final PageController controller = PageController(initialPage: 0);
-  static String _titleContent;
-  static String _content;
+  static List _contentTitles = [];
+  static List _contents = [];
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,13 @@ class TipPartOne extends StatelessWidget {
         .get()
         .then((DocumentSnapshot documentSnapshot) {
       if (documentSnapshot.exists) {
-        _titleContent = documentSnapshot.data()["titleContent"];
-        _content = documentSnapshot.data()["content"];
+        Map data = documentSnapshot.data();
+        var temp = data.keys.toList();
+        temp.sort();
+        _contentTitles = temp.reversed.toList();
+        for (var tit in _contentTitles) {
+          _contents.add(data[tit]);
+        }
       }
     });
     return MaterialApp(
@@ -42,16 +47,11 @@ class TipPartOne extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           controller: controller,
           children: <Widget>[
-            TipContent(
-              titleContent: _titleContent,
-              content: _content,
-            ),
-            Center(
-              child: Text('Second Page'),
-            ),
-            Center(
-              child: Text('Third Page'),
-            )
+            for (var i = 0; i < _contentTitles.length; i++)
+              TipContent(
+                contentTitle: _contentTitles[i],
+                content: _contents[i],
+              )
           ],
         ),
       ),

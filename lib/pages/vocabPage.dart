@@ -10,26 +10,21 @@ import 'package:http/http.dart' as http;
 class Word {
   final String word, spelling, audiofile;
   final List definitions;
-  // final List examples;
 
   Word({this.word, this.spelling, this.audiofile, this.definitions});
-  // this.examples});
 
   factory Word.fromJson(Map<String, dynamic> json) {
     List senses =
         json['results'][0]['lexicalEntries'][0]['entries'][0]['senses'];
     List definitions = [];
-    // List examples = [];
     for (var i = 0; i < senses.length; i++) {
       definitions.add(senses[i]['definitions'][0]);
-      // examples.add(senses[i]['examples'][0]);
     }
     return Word(
       word: json['results'][0]['id'],
       spelling: json['results'][0]['lexicalEntries'][0]['entries'][0]
           ['pronunciations'][0]['phoneticSpelling'],
       definitions: definitions,
-      // examples: examples,
       audiofile: json['results'][0]['lexicalEntries'][0]['entries'][0]
           ['pronunciations'][0]['audioFile'],
     );
@@ -38,8 +33,8 @@ class Word {
 
 Future<Word> getWord() async {
   var randomWord = generateNoun().take(1).first.toString();
-  final language = 'en-gb';
   print(randomWord);
+  final language = 'en-gb';
   var response = await http.get(
       Uri.https('od-api.oxforddictionaries.com',
           'api/v2/entries/' + language + '/' + randomWord),

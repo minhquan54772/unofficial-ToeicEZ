@@ -1,9 +1,13 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toeic/pages/button/indexed_button.dart';
-import 'package:toeic/pages/tipPages/part_one.dart';
-import 'package:toeic/pages/tipPages/part_two.dart';
+import 'package:toeic/pages/tipPages/part (1).dart';
+import 'package:toeic/pages/tipPages/part (2).dart';
+import 'package:toeic/pages/tipPages/part (3).dart';
+import 'package:toeic/pages/tipPages/part (4).dart';
+import 'package:toeic/pages/tipPages/part (5).dart';
+import 'package:toeic/pages/tipPages/part (6).dart';
+import 'package:toeic/pages/tipPages/part (7).dart';
 
 class PracticeTipPage extends StatefulWidget {
   @override
@@ -22,15 +26,6 @@ class _PracticeTipPageState extends State<PracticeTipPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    FirebaseFirestore.instance
-        .collection('practiceTip')
-        .get()
-        .then((QuerySnapshot querySnapshot) {
-      querySnapshot.docs.forEach((doc) {
-        parts[doc['index']] = doc.id;
-      });
-    });
-
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -45,7 +40,7 @@ class _PracticeTipPageState extends State<PracticeTipPage> {
             IndexedButton(
               content: parts[0],
               index: 1,
-              page: () => TipPartOne(),
+              page: () => TipPart1(),
             ),
             Padding(padding: EdgeInsets.only(top: 5)),
             IndexedButton(
@@ -54,15 +49,35 @@ class _PracticeTipPageState extends State<PracticeTipPage> {
               page: () => TipPart2(),
             ),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: parts[2], index: 3),
+            IndexedButton(
+              content: parts[2],
+              index: 3,
+              page: () => TipPart3(),
+            ),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: parts[3], index: 4),
+            IndexedButton(
+              content: parts[3],
+              index: 4,
+              page: () => TipPart4(),
+            ),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: parts[4], index: 5),
+            IndexedButton(
+              content: parts[4],
+              index: 5,
+              page: () => TipPart5(),
+            ),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: parts[5], index: 6),
+            IndexedButton(
+              content: parts[5],
+              index: 6,
+              page: () => TipPart6(),
+            ),
             Padding(padding: EdgeInsets.only(top: 5)),
-            IndexedButton(content: parts[6], index: 7),
+            IndexedButton(
+              content: parts[6],
+              index: 7,
+              page: () => TipPart7(),
+            ),
           ],
         ),
       ),
