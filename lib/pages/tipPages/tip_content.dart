@@ -1,19 +1,31 @@
 import 'package:flutter/cupertino.dart';
 
 class TipContent extends StatelessWidget {
-  final String _titleContent;
+  final String _contentTitle;
   final String _content;
 
-  TipContent({titleContent, content}):
-      this._titleContent = titleContent,
-      this._content = content;
+  TipContent({contentTitle, content})
+      : this._contentTitle = contentTitle,
+        this._content = content;
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('${this._titleContent}', style: TextStyle(fontWeight: FontWeight.bold),),
-        Padding(padding: EdgeInsets.only(top: 10.0)),
-        Text('${this._content}'),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            '${this._contentTitle}',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            '${this._content}',
+            style: TextStyle(fontSize: 18),
+          ),
+        ),
       ],
     );
   }

@@ -5,6 +5,8 @@ import 'package:toeic/pages/grammar_page.dart';
 import 'package:toeic/pages/history_page.dart';
 import 'package:toeic/pages/part_practice.dart';
 import 'package:toeic/pages/practicetips_page.dart';
+import 'package:toeic/pages/shortTestPage.dart';
+import 'package:toeic/pages/vocabPage.dart';
 
 class LibraryPage extends StatefulWidget {
   @override
@@ -30,6 +32,7 @@ class _LibraryState extends State<LibraryPage> {
             OneLineStretchButton(
               content: 'Bài kiểm tra rút gọn',
               icon: Icon(Icons.mode_edit, color: Colors.black),
+              page: () => ShortTestPage(),
             ),
             SizedBox(height: 10),
             OneLineStretchButton(
@@ -41,6 +44,7 @@ class _LibraryState extends State<LibraryPage> {
             OneLineStretchButton(
               content: 'Từ vựng',
               icon: Icon(Icons.menu_book_outlined, color: Colors.black),
+              page: () => VocabPage(),
             ),
             SizedBox(height: 10),
             OneLineStretchButton(
