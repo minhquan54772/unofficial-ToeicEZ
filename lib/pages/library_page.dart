@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:toeic/pages/button/oneline_stretch_button.dart';
 import 'package:toeic/pages/grammar_page.dart';
 import 'package:toeic/pages/history_page.dart';
@@ -14,9 +17,25 @@ class LibraryPage extends StatefulWidget {
 }
 
 class _LibraryState extends State<LibraryPage> {
+  List _questions = [];
+
+  Future<void> readJSON() async {
+    final String resp =
+        await rootBundle.loadString('assets/json/questions.json');
+    final questions = await json.decode(resp);
+    setState(() {
+      _questions = questions['questions'];
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    readJSON();
+  }
+
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(15.0),
@@ -32,7 +51,7 @@ class _LibraryState extends State<LibraryPage> {
             OneLineStretchButton(
               content: 'Bài kiểm tra rút gọn',
               icon: Icon(Icons.mode_edit, color: Colors.black),
-              page: () => ShortTestPage(),
+              page: () => ShortTestPage(questions: _questions),
             ),
             SizedBox(height: 10),
             OneLineStretchButton(
