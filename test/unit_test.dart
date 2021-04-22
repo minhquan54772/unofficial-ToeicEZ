@@ -18,11 +18,73 @@ void main(){
       home: child,
     );
   }
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Button test', (WidgetTester tester) async {
+    await tester.pumpWidget(createWidgetForTesting(child: new LibraryPage()));
+
+    expect(find.text('Bài kiểm tra TOEIC đầy đủ'), findsOneWidget);
+
+    await tester.pumpAndSettle();
+    await tester.pumpWidget(createWidgetForTesting(child: new LibraryPage()));
+
+    expect(find.text('Bài kiểm tra rút gọn'), findsOneWidget);
+
+    await tester.pumpAndSettle();
+    await tester.pumpWidget(createWidgetForTesting(child: new LibraryPage()));
+
+    expect(find.text('Luyện riêng từng phần'), findsOneWidget);
+
+    await tester.pumpAndSettle();
     await tester.pumpWidget(createWidgetForTesting(child: new LibraryPage()));
 
     expect(find.text('Từ vựng'), findsOneWidget);
 
     await tester.pumpAndSettle();
-  });
+    await tester.pumpWidget(createWidgetForTesting(child: new LibraryPage()));
+
+    expect(find.text('Ngữ pháp'), findsOneWidget);
+
+    await tester.pumpAndSettle();
+    await tester.pumpWidget(createWidgetForTesting(child: new LibraryPage()));
+
+    expect(find.text('Tip làm bài'), findsOneWidget);
+
+    await tester.pumpAndSettle();
+    await tester.pumpWidget(createWidgetForTesting(child: new LibraryPage()));
+
+    expect(find.text('Lịch sử'), findsOneWidget);
+
+    await tester.pumpAndSettle();
+    {
+      var button = find.text("Bài kiểm tra TOEIC đầy đủ");
+      expect(button, findsOneWidget);
+      await tester.tap(button);
+      await tester.pump();
+    }
+    {
+      var button = find.text("Ngữ pháp");
+    expect(button, findsOneWidget);
+    await tester.tap(button);
+    await tester.pump();
+    }
+    {
+      var button = find.text("Từ vựng");
+      expect(button, findsOneWidget);
+      await tester.tap(button);
+      await tester.pump();
+    }
+    {
+      var button = find.text("Tip làm bài");
+      expect(button, findsOneWidget);
+      await tester.tap(button);
+      await tester.pump();
+    }
+
+  }
+
+
+  );
+
 }
+
+
+
