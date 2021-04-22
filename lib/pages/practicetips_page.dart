@@ -1,7 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:toeic/pages/button/indexed_button.dart';
- main
+import 'package:toeic/pages/tipPages/part (1).dart';
+import 'package:toeic/pages/tipPages/part (2).dart';
+import 'package:toeic/pages/tipPages/part (3).dart';
+import 'package:toeic/pages/tipPages/part (4).dart';
+import 'package:toeic/pages/tipPages/part (5).dart';
+import 'package:toeic/pages/tipPages/part (6).dart';
+import 'package:toeic/pages/tipPages/part (7).dart';
 
 class PracticeTipPage extends StatefulWidget {
   @override
