@@ -1,28 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:toeic/pages/button/indexed_button.dart';
+import 'package:toeic/pages/grammarPages/basic (1).dart';
+import 'package:toeic/pages/grammarPages/basic (2).dart';
+import 'package:toeic/pages/grammarPages/basic (3).dart';
+import 'package:toeic/pages/grammarPages/basic (4).dart';
+import 'package:toeic/pages/grammarPages/basic (5).dart';
+import 'package:toeic/pages/grammarPages/basic (6).dart';
+import 'package:toeic/pages/grammarPages/basic (7).dart';
+import 'package:toeic/pages/grammarPages/basic (8).dart';
 
-import 'button/indexed_button.dart';
-import 'grammarPages/basic_eight.dart';
-import 'grammarPages/basic_eleven.dart';
-import 'grammarPages/basic_five.dart';
-import 'grammarPages/basic_four.dart';
-import 'grammarPages/basic_nine.dart';
-import 'grammarPages/basic_one.dart';
-import 'grammarPages/basic_seven.dart';
-import 'grammarPages/basic_six.dart';
-import 'grammarPages/basic_ten.dart';
-import 'grammarPages/basic_three.dart';
-import 'grammarPages/basic_two.dart';
-import 'grammarPages/common_eight.dart';
-import 'grammarPages/common_five.dart';
-import 'grammarPages/common_four.dart';
-import 'grammarPages/common_one.dart';
-import 'grammarPages/common_seven.dart';
-import 'grammarPages/common_six.dart';
-import 'grammarPages/common_ten.dart';
-import 'grammarPages/common_three.dart';
-import 'grammarPages/common_two.dart';
-import 'grammarPages/conmon_nine.dart';
+class GrammarPage extends StatefulWidget {
+  @override
+  _GrammarPageState createState() => _GrammarPageState();
+}
 
 class GrammarPage extends StatelessWidget {
   final tab = TabBar(tabs: <Tab>[
@@ -32,97 +23,71 @@ class GrammarPage extends StatelessWidget {
   ]);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 2,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: TabBar(
-              labelStyle: TextStyle(fontSize: 20),
-              tabs: [
-                Tab(text: 'Cơ bản',),
-                Tab(text: 'Thông dụng',),
-              ],
-            ),
-            title: Row(
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(Icons.arrow_back_outlined),
-                    padding: EdgeInsets.only(left: 10.0, right: 30.0),
-                    onPressed: (){
-                      Navigator.pop(context);
-                    },
-                  ),
-                  Text('Ngữ pháp')
-                ]
-            ),
-          ),
-          body: TabBarView(
-            children: [
-              Padding(
-                padding: EdgeInsets.all(0),
-                  child: SingleChildScrollView (
-                    child: Column(
-                     crossAxisAlignment: CrossAxisAlignment.stretch,
-                     children: <Widget>[
-                       IndexedButton(content: 'Cấu trúc chung của một câu', index: 1, page: () => BasicGrammarOne(),),
-                       Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Noun phrase (Ngữ danh từ)', index: 2, page: () => BasicGrammarTwo(),),
-                       Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Verb phrase (Ngữ động từ)', index: 3, page: () => BasicGrammarThree(),),
-                       Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Sự hòa hợp giữa noun và verb', index: 4, page: () => BasicGrammarFour(),),
-                       Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Đại từ', index: 5, page: () => BasicGrammarFive(),),
-                       Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Tân ngữ và các vấn đề liên quan', index: 6, page: () => BasicGrammarSix(),),
-                       Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Một số động từ đặc biệt', index: 7, page: () => BasicGrammarSeven(),),
-                       Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Câu hỏi', index: 8, page: () => BasicGrammarEight(),),
-                       Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Lối nói phụ họa', index: 9, page: () => BasicGrammarNine(),),
-                       Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Câu phủ định (negation)', index: 10, page: () => BasicGrammarTen(),),
-                       Padding(padding: EdgeInsets.only(top: 5)),
-                       IndexedButton(content: 'Câu mệnh lệnh', index: 11, page: () => BasicGrammarEleven(),),
-                    ],
-                  ),
-                ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          children: [Text('Ngữ pháp')],
+        ),
+      ),
+      body: Padding(
+        padding: EdgeInsets.all(0),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              IndexedButton(
+                content: 'Cấu trúc chung của một câu',
+                index: 1,
+                page: () => BasicGrammarOne(),
               ),
-
-              Padding(
-                padding: EdgeInsets.all(0),
-                child: SingleChildScrollView (
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: <Widget>[
-                      IndexedButton(content: 'Present simple', index: 1, page: () => CommonGrammarOne(),),
-                      Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present continuous', index: 2, page: () => CommonGrammarTwo(),),
-                      Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present continuous and present simple(1)', index: 3, page: () => CommonGrammarThree(),),
-                      Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present continuous and present simple(2)', index: 4, page: () => CommonGrammarFour(),),
-                      Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Past simple', index: 5, page: () => CommonGrammarFive(),),
-                      Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Past continuous', index: 6, page: () => CommonGrammarSix(),),
-                      Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present perfect (1)', index: 7, page: () => CommonGrammarSeven(),),
-                      Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present perfect (2)', index: 8, page: () => CommonGrammarEight(),),
-                      Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present continuous', index: 9, page: () => CommonGrammarNine(),),
-                      Padding(padding: EdgeInsets.only(top: 5)),
-                      IndexedButton(content: 'Present continuous and simple', index: 10, page: () => CommonGrammarTen(),),
-                      
-                    ],
-                  ),
-                ),
+              Padding(padding: EdgeInsets.only(top: 5)),
+              IndexedButton(
+                content: 'Noun phrase (Ngữ danh từ)',
+                index: 2,
+                page: () => BasicGrammarTwo(),
               ),
-
-
+              Padding(padding: EdgeInsets.only(top: 5)),
+              IndexedButton(
+                content: 'Verb phrase (Ngữ động từ)',
+                index: 3,
+                page: () => BasicGrammar3(),
+              ),
+              Padding(padding: EdgeInsets.only(top: 5)),
+              IndexedButton(
+                content: 'Sự hòa hợp giữa chủ ngữ và động từ',
+                index: 4,
+                page: () => BasicGrammar4(),
+              ),
+              Padding(padding: EdgeInsets.only(top: 5)),
+              IndexedButton(
+                content: 'Đại từ',
+                index: 5,
+                page: () => BasicGrammar5(),
+              ),
+              Padding(padding: EdgeInsets.only(top: 5)),
+              IndexedButton(
+                content: 'Tân ngữ và các vấn đề liên quan',
+                index: 6,
+                page: () => BasicGrammar6(),
+              ),
+              Padding(padding: EdgeInsets.only(top: 5)),
+              IndexedButton(
+                content: 'Một số động từ đặc biệt (need,dare,to be,get)',
+                index: 7,
+                page: () => BasicGrammar7(),
+              ),
+              Padding(padding: EdgeInsets.only(top: 5)),
+              IndexedButton(
+                content: 'Câu phủ định (negation)',
+                index: 8,
+                page: () => BasicGrammar8(),
+              ),
+              Padding(padding: EdgeInsets.only(top: 5)),
+              IndexedButton(content: 'Lối nói phụ họa', index: 9),
+              Padding(padding: EdgeInsets.only(top: 5)),
+              IndexedButton(content: 'Câu hỏi', index: 10),
+              Padding(padding: EdgeInsets.only(top: 5)),
+              IndexedButton(content: 'Câu mệnh lệnh', index: 11),
             ],
           ),
         ),
