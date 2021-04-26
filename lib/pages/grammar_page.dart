@@ -15,12 +15,7 @@ class GrammarPage extends StatefulWidget {
   _GrammarPageState createState() => _GrammarPageState();
 }
 
-class GrammarPage extends StatelessWidget {
-  final tab = TabBar(tabs: <Tab>[
-    Tab(icon: Icon(Icons.arrow_forward)),
-    Tab(icon: Icon(Icons.arrow_downward)),
-    Tab(icon: Icon(Icons.arrow_back)),
-  ]);
+class _GrammarPageState extends State<GrammarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
