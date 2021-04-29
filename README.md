@@ -25,4 +25,6 @@ Với đề tài này, ứng dụng được tập trung phát triển các tín
 2 Integration test
 
 ![image](https://user-images.githubusercontent.com/59120278/116436993-275e5400-a877-11eb-8625-415c384ca395.png)
+![image](https://user-images.githubusercontent.com/59120278/116503041-57d9d880-a8df-11eb-8617-8ad85067526a.png)
+![image](https://user-images.githubusercontent.com/59120278/116503068-64f6c780-a8df-11eb-83d8-d2de34fd3196.png)
 
