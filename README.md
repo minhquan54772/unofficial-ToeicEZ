@@ -20,5 +20,11 @@ Với đề tài này, ứng dụng được tập trung phát triển các tín
 2. [Thiết kế giao diện trên Figma](https://www.figma.com/file/JnrWjDCzI3gj3ILkW4c529/ToeicEZ?node-id=0%3A1)
 ## Testing
 1. Unit test
+
 ![image](https://user-images.githubusercontent.com/59120278/115662007-8cdaae00-a368-11eb-8855-92e6f68761c6.png)
 2 Integration test
+
+![image](https://user-images.githubusercontent.com/59120278/116436993-275e5400-a877-11eb-8625-415c384ca395.png)
+![image](https://user-images.githubusercontent.com/59120278/116503041-57d9d880-a8df-11eb-8617-8ad85067526a.png)
+![image](https://user-images.githubusercontent.com/59120278/116503068-64f6c780-a8df-11eb-83d8-d2de34fd3196.png)
+
