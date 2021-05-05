@@ -7,10 +7,10 @@ class NewsButton extends StatelessWidget {
   final Icon icon;
 
   //constructor
-  NewsButton({@required title, content, icon}):
-      this.title = title,
-      this.content = content,
-      this.icon = icon;
+  NewsButton({@required title, content, icon})
+      : this.title = title,
+        this.content = content,
+        this.icon = icon;
 
   @override
   Widget build(BuildContext context) {
@@ -29,21 +29,24 @@ class NewsButton extends StatelessWidget {
                   SizedBox(width: 10),
                   Text(
                     '${this.title}',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16, color: Colors.black),
                   ),
                 ],
               ),
               Padding(padding: EdgeInsets.only(top: 10)),
-              Text('${this.content}'),
+              Text(
+                '${this.content}',
+                style: TextStyle(color: Colors.black38),
+              ),
               Padding(padding: EdgeInsets.only(top: 10)),
             ],
           ),
           style: ElevatedButton.styleFrom(
-            primary: Colors.teal,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
+            primary: Colors.white,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(5))),
           ),
-          onPressed: (){},
-        )
-    );
+          onPressed: () {},
+        ));
   }
 }

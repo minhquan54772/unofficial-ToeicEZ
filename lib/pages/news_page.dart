@@ -21,25 +21,37 @@ class _NewsPageState extends State<NewsPage> {
             NewsButton(
               title: 'Phiên bản mới nhất 2.6.2',
               content: 'Bạn đang sử dụng phiên bản mới nhất',
-              icon: Icon(Icons.info),
+              icon: Icon(
+                Icons.info,
+                color: Colors.red,
+              ),
             ),
             Padding(padding: EdgeInsets.only(top: 10)),
             NewsButton(
               title: 'Cập nhật để 2020 (đến ngày 05/05/2020)',
               content: 'Đã có đủ 10 đề ETS 2020 rồi các bạn nhé',
-              icon: Icon(Icons.mode_outlined),
+              icon: Icon(
+                Icons.mode_outlined,
+                color: Colors.orange,
+              ),
             ),
             Padding(padding: EdgeInsets.only(top: 10)),
             NewsButton(
               title: 'Đánh giá ToeicEZ',
               content: 'Ý kiến phản hồi',
-              icon: Icon(Icons.mode_outlined),
+              icon: Icon(
+                Icons.star_rate_outlined,
+                color: Colors.yellow.shade400,
+              ),
             ),
             Padding(padding: EdgeInsets.only(top: 10)),
             NewsButton(
               title: 'Khuyến mại đặc biệt',
               content: 'Mua tài khoản VIP vĩnh viễn (giảm giá 60%)',
-              icon: Icon(FontAwesomeIcons.tag),
+              icon: Icon(
+                FontAwesomeIcons.tag,
+                color: Colors.red,
+              ),
             ),
           ],
         ),

@@ -33,7 +33,6 @@ class Word {
 
 Future<Word> getWord() async {
   var randomWord = generateNoun().take(1).first.toString();
-  print(randomWord);
   final language = 'en-gb';
   var response = await http.get(
       Uri.https('od-api.oxforddictionaries.com',

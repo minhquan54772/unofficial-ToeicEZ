@@ -19,6 +19,16 @@ class _AccountState extends State<AccountPage> {
   String displayName;
   String email;
 
+  final Shader linearGradient = LinearGradient(
+    colors: <Color>[
+      Colors.red,
+      Colors.orange,
+      Colors.yellow,
+      Colors.green,
+      Colors.blue
+    ],
+  ).createShader(Rect.fromLTWH(0.0, 0.0, 200.0, 70.0));
+
   @override
   void initState() {
     super.initState();
@@ -32,10 +42,12 @@ class _AccountState extends State<AccountPage> {
         .get()
         .then((QuerySnapshot querySnapshot) {
       querySnapshot.docs.forEach((doc) {
-        if (doc.id == user.uid) {
-          this.displayName = doc['DisplayName'];
-          this.email = doc['Email'];
-        }
+        setState(() {
+          if (doc.id == user.uid) {
+            this.displayName = doc['DisplayName'];
+            this.email = doc['Email'];
+          }
+        });
       });
     });
     return;
@@ -49,11 +61,14 @@ class _AccountState extends State<AccountPage> {
         child: Column(
           children: <Widget>[
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
                   padding: EdgeInsets.all(10.0),
-                  child: SvgPicture.asset(
-                    "assets/images/icons/icon_user.svg",
+                  child: Icon(
+                    FontAwesomeIcons.userCircle,
+                    size: 30,
+                    color: Colors.blue,
                   ),
                 ),
                 Padding(
@@ -62,71 +77,93 @@ class _AccountState extends State<AccountPage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        '${this.displayName}',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25.0,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 3.0),
+                        child: Text(
+                          '${this.displayName}',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25.0,
+                          ),
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 3.0)),
-                      Text('GG: ${this.email}'),
-                      Padding(padding: EdgeInsets.only(top: 3.0)),
-                      Text(
-                        'PREMIUM USER',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0,
-                          color: Colors.blueAccent,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 3.0),
+                        child: Text('GG: ${this.email}'),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 3.0),
+                        child: Text(
+                          'PREMIUM USER',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                              // color: Colors.blueAccent,
+                              foreground: Paint()..shader = linearGradient),
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 5.0)),
-                      Text(
-                        'Coin: 0',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0,
-                          color: Colors.blueAccent,
+                      Padding(
+                        padding: const EdgeInsets.only(top: 3.0),
+                        child: Text(
+                          'Coin: 0',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16.0,
+                            color: Colors.blueAccent,
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
+                Spacer(),
                 IconButton(
                   icon: Icon(Icons.exit_to_app),
                   padding: EdgeInsets.only(left: 30.0),
                   color: Colors.redAccent,
-                  onPressed: (){
-                    BlocProvider.of<AuthenticationBloc>(context).add(AuthenticationEventLoggedOut());
+                  onPressed: () {
+                    BlocProvider.of<AuthenticationBloc>(context)
+                        .add(AuthenticationEventLoggedOut());
                   },
                 ),
               ],
             ),
-            OneLineStretchButton(
-              content: 'Kích hoạt tài khoản',
-              icon: Icon(Icons.verified, color: Colors.black),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: OneLineStretchButton(
+                content: 'Kích hoạt tài khoản',
+                icon: Icon(Icons.verified, color: Colors.cyan),
+              ),
             ),
-            Padding(padding: EdgeInsets.only(top: 10.0)),
-            OneLineStretchButton(
-              content: 'Fanpage ToeicEZ',
-              icon: Icon(FontAwesomeIcons.facebook, color: Colors.black),
-              url: 'https://www.facebook.com/toeicez/',
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: OneLineStretchButton(
+                content: 'Fanpage ToeicEZ',
+                icon: Icon(FontAwesomeIcons.facebook, color: Colors.blueAccent),
+                url: 'https://www.facebook.com/toeicez/',
+              ),
             ),
-            Padding(padding: EdgeInsets.only(top: 10.0)),
-            OneLineStretchButton(
-              content: 'Đánh giá ứng dụng',
-              icon: Icon(Icons.star, color: Colors.black),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: OneLineStretchButton(
+                content: 'Đánh giá ứng dụng',
+                icon: Icon(Icons.star, color: Colors.yellow.shade700),
+              ),
             ),
-            Padding(padding: EdgeInsets.only(top: 10.0)),
-            OneLineStretchButton(
-              content: 'Chia sẻ cho bạn bè',
-              icon: Icon(Icons.share, color: Colors.black),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: OneLineStretchButton(
+                content: 'Chia sẻ cho bạn bè',
+                icon: Icon(Icons.share, color: Colors.blue),
+              ),
             ),
-            Padding(padding: EdgeInsets.only(top: 10.0)),
-            OneLineStretchButton(
-              content: 'Giới thiệu',
-              icon: Icon(Icons.info, color: Colors.black),
-              url: 'https://www.facebook.com/toeicez/',
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: OneLineStretchButton(
+                content: 'Giới thiệu',
+                icon: Icon(Icons.info, color: Colors.red),
+                url: 'https://www.facebook.com/toeicez/',
+              ),
             ),
           ],
         ),

@@ -32,17 +32,23 @@ class MyApp extends StatelessWidget {
       builder: (context, snapshot) {
         return MaterialApp(
           title: 'ToeicEZ Application',
+          theme: ThemeData(scaffoldBackgroundColor: Colors.white),
           home: BlocProvider(
-            create: (context) => AuthenticationBloc(userRepository: _userRepository)..add(AuthenticationEventStarted()),
+            create: (context) =>
+                AuthenticationBloc(userRepository: _userRepository)
+                  ..add(AuthenticationEventStarted()),
             child: BlocBuilder<AuthenticationBloc, AuthenticationState>(
               builder: (context, authenticationState) {
                 if (authenticationState is AuthenticationStateSuccess) {
                   return HomePage();
                 } else if (authenticationState is AuthenticationStateFailure) {
                   return BlocProvider<LoginBloc>(
-                      create: (context) => LoginBloc(userRepository: _userRepository),
-                      child: LoginPage(userRepository: _userRepository,)//LoginPage,
-                  );
+                      create: (context) =>
+                          LoginBloc(userRepository: _userRepository),
+                      child: LoginPage(
+                        userRepository: _userRepository,
+                      ) //LoginPage,
+                      );
                 }
                 return SplashPage();
               },
@@ -51,6 +57,5 @@ class MyApp extends StatelessWidget {
         );
       },
     );
-
   }
 }

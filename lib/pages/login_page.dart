@@ -30,7 +30,6 @@ class _LoginPageState extends State<LoginPage> {
   UserRepository get _userRepository => widget._userRepository;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _loginBloc = BlocProvider.of<LoginBloc>(context);
     _emailController.addListener(() {
@@ -52,7 +51,6 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       body: BlocBuilder<LoginBloc, LoginState>(
         builder: (context, loginState) {
@@ -77,68 +75,55 @@ class _LoginPageState extends State<LoginPage> {
                             image: AssetImage('assets/images/Toeicez.png'),
                             fit: BoxFit.fitWidth),
                       )),
-                  SizedBox(height: 10),
-                  Text(
-                    'Learn TOEIC your own pace',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color.fromRGBO(144, 137, 137, 1),
-                      fontFamily: 'Roboto',
-                      fontSize: 19,
-                    ),
-                  ),
+                  SizedBox(height: 150),
+                  // -------------------
                   // TextFormField(
                   //   controller: _emailController,
                   //   decoration: InputDecoration(
-                  //     icon: Icon(Icons.email),
-                  //     labelText: 'Enter your email'
-                  //   ),
+                  //       icon: Icon(Icons.email), labelText: 'Enter your email'),
                   //   keyboardType: TextInputType.emailAddress,
                   //   autovalidateMode: AutovalidateMode.always,
                   //   autocorrect: false,
                   //   validator: (_) {
-                  //     return loginState.isValidEmail ? null : 'Invalid email format';
+                  //     return loginState.isValidEmail
+                  //         ? null
+                  //         : 'Invalid email format';
                   //   },
                   // ),
                   // TextFormField(
-                  //   controller: _passwordController,
-                  //   decoration: InputDecoration(
-                  //       icon: Icon(Icons.lock),
-                  //       labelText: 'Enter your password'
-                  //   ),
-                  //   obscureText: true,
-                  //   autovalidateMode: AutovalidateMode.always,
-                  //   autocorrect: false,
-                  //   validator: (_) {
-                  //     return loginState.isValidPassword ? null : 'Invalid password format';
-                  //   }),
+                  //     controller: _passwordController,
+                  //     decoration: InputDecoration(
+                  //         icon: Icon(Icons.lock),
+                  //         labelText: 'Enter your password'),
+                  //     obscureText: true,
+                  //     autovalidateMode: AutovalidateMode.always,
+                  //     autocorrect: false,
+                  //     validator: (_) {
+                  //       return loginState.isValidPassword
+                  //           ? null
+                  //           : 'Invalid password format';
+                  //     }),
+                  // ----------------
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
+                        // -------------------
                         // LoginButton(
-                        //   onPressed: isLoginButtonEnabled(loginState)?
-                        //   _onLoginEmailAndPassword : null, //check is enable?
+                        //   onPressed: isLoginButtonEnabled(loginState)
+                        //       ? _onLoginEmailAndPassword
+                        //       : null, //check is enable?
                         // ),
-                        // Padding(padding: EdgeInsets.only(top: 10),),
-                        // RegisterUserButton(userRepository: _userRepository,),
-                        // Padding(padding: EdgeInsets.only(top: 10),),
-                        // Text(
-                        //   '- OR -',
-                        //   textAlign: TextAlign.center,
-                        //   style: TextStyle(
-                        //     color: Color.fromRGBO(144, 137, 137, 1),
-                        //   ),
-                        // ),
+                        // ------------------
                         Padding(
-                          padding: EdgeInsets.only(top: 100),
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: GoogleLoginButton(),
                         ),
-                        GoogleLoginButton(),
                         Padding(
-                          padding: EdgeInsets.only(top: 10),
+                          padding: const EdgeInsets.only(top: 10),
+                          child: FacebookLoginButton(),
                         ),
-                        FacebookLoginButton(),
                       ],
                     ),
                   ),
