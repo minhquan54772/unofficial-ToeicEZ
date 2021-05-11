@@ -39,9 +39,7 @@ class _LibraryState extends State<LibraryPage> {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(15.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: ListView(
           children: <Widget>[
             OneLineStretchButton(
               content: 'Bài kiểm tra TOEIC đầy đủ',
@@ -111,6 +109,7 @@ class _LibraryState extends State<LibraryPage> {
               ),
               page: () => HistoryPage(),
             ),
+            SizedBox(height: 10),
           ],
         ),
       ),
